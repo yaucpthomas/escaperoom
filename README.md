@@ -8,9 +8,11 @@ We would design an escape game, which includes kinds of general concepts in othe
 ## Features / Functions
 1. Generation of random game sets or events
    - Random respawn point
-   - Magic items (e.g. dice) for random rewards/penalties at random time
+   - Magic items (e.g. dice) for random rewards/penalties spawned at random time
    - Random passcodes or clues 
 2. Data structures for storing game status
+   - Using boolean data type to determine whether one particular puzzle has been solved or not
+   - Using string data type to store the player's position (e.g. "A3")
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
 3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
