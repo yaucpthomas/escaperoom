@@ -5,6 +5,9 @@ Ng To San (3035601619),  Yau Chin Pang (3035689257)
 ## Game Description 
 We would design an escape game, which includes kinds of general concepts in other similar games, such as discovering various clues and items, mysterious traps and baits, different versions of endings. To motivate the players to continue the game, this escape game will include the respawn function with random respawn points instead of restarting the current state. 
 
+## Basic Game Rules
+1. Cant think
+
 ## Features / Functions
 1. Generation of random game sets or events
    - Random respawn point
