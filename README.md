@@ -8,8 +8,8 @@ We would design an escape game, which includes kinds of general concepts in othe
 ## Features / Functions
 1. Generation of random game sets or events
    - Random respawn point
-   - Magic items (e.g. dice) for random rewards/penalties
-   - Random passcodes or clues with a certain pattern to solve the puzzle
+   - Magic items (e.g. dice) for random rewards/penalties at random time
+   - Random passcodes or clues within a certain pattern to let the player to solve the puzzle
 2. Data structures for storing game status
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
