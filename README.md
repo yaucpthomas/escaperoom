@@ -34,7 +34,9 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    - A .txt file will store a player's inventory, solved puzzle, position and progress. 
    
 5. Program codes in multiple files
-   - 
+   - Separate the codes in multiple files to reduce confusion and have a better workflow
+      - A backpack.h which contain all the commands regarding the backpack (e.g. CheckBackpack)
+      - Think ng dou
    
 6. Proper indentation and naming styles 
    - Indentation: K&R style based on [Indentation style](https://en.wikipedia.org/wiki/Indentation_style)
