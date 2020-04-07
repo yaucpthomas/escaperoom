@@ -18,7 +18,6 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    - Random respawn point
    - Magic items (e.g. dice) for random rewards/penalties spawned at random time
    - Random passcodes or clues 
-   
 2. Data structures for storing game status
    - A .txt file will contain a player's inventory, progress and solved puzzle
      - A Dynamic Array will store player's item
@@ -26,23 +25,18 @@ To motivate the players to continue the game, though a bit fantastical, this esc
      - Boolean data type will be used to determine if a clue or hint is discovered or not
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
-   
 3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
    - A dynamic array would be used to store the player's items named "backpack"
-   
 4. File input/output (e.g., for [loading/saving game status](http://www.cplusplus.com/forum/beginner/106630/))
    - A .txt file will store a player's inventory, solved puzzle, position and progress. 
-   
 5. Program codes in multiple files
    - Separate the codes in multiple files to reduce confusion and have a better workflow
       - A backpack.h which contain all the commands regarding the backpack (e.g. CheckBackpack)
       - Think ng dou
-   
 6. Proper indentation and naming styles 
    - Indentation: K&R style based on [Indentation style](https://en.wikipedia.org/wiki/Indentation_style)
    - Naming Style: Function names directly based on own function 
       e.g. `Action(command)` for executing different commands, `UseItem(item)` for using specific item, etc...
-      
 7. In-code documentation
    - Command Explanations
    - Item Explanations
