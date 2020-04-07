@@ -21,9 +21,9 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    
 2. Data structures for storing game status
    - A .txt file will contain a player's inventory, progress and solved puzzle
-    - A Dynamic Array will store player's item
-    - Boolean data type will be used to determine whether a particular puzzle is solved or not
-    - Boolean data type will be used to determine if a clue or hint is discovered or not
+     - A Dynamic Array will store player's item
+     - Boolean data type will be used to determine whether a particular puzzle is solved or not
+     - Boolean data type will be used to determine if a clue or hint is discovered or not
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
    
