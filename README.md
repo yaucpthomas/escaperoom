@@ -9,7 +9,7 @@ Therefore, the rules to complete the mission are:
 1. Figure out the way(s) to escape from the old building *1 
 2. Find back all the necessary information correctly
 3. Find ways to make CIA (America) recognize own identity after successfully escaping
-(*1 The old building used to be a human experiment factory, which may retain traces of people trying to escape from here.)
+   (*1 The old building used to be a human experiment factory, which may retain traces of people trying to escape from here.)
 
 To motivate the players to continue the game, though a bit fantastical, this escape game will include the respawn function with random respawn points instead of restarting the current state. 
 
