@@ -19,7 +19,7 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    - Magic items (e.g. dice) for random rewards/penalties spawned at random time
    - Random passcodes or clues 
 2. Data structures for storing game status
-   - Using boolean data type to determine whether one particular puzzle has been solved or not
+   - Using boolean data type to determine whether one particular puzzle has been solved or not and a clue or hint has been discovered or not
    - Using string data type to store the player's position (e.g. "A3")
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
