@@ -2,7 +2,7 @@
 ## Team member 
 Ng To San (3035601619),  Yau Chin Pang (3035689257)
 
-## Game Description with basic game rules
+## Game Description with Basic Game Rules
 We would design an escape game, which includes kinds of general concepts in other similar games, such as discovering various clues, items, mysterious traps and traces, and different versions of endings. In this escape game, we will adapt the true story of the Cold War, which is a well-known espionage and betrayal in the Soviet Union. Players will act as a betrayed spy ([Pyotr Popov](https://en.wikipedia.org/wiki/Pyotr_Semyonovich_Popov)), who had just been caught and charged with treason with sufficient evidence before being ready to leave from his own intelligence agency. After long-time inhumane torture, the spy could only remember his own mission - get all the necessary information and escape asap, but unfortunately, he couldn't remember all the details of the information.
 
 Therefore, the rules to complete the mission are:
@@ -19,8 +19,11 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    - Magic items (e.g. dice) for random rewards/penalties spawned at random time
    - Random passcodes or clues 
 2. Data structures for storing game status
-   - Using boolean data type to determine whether one particular puzzle has been solved or not and a clue or hint has been discovered or not
-   - Using string data type to store the player's position (e.g. "A3")
+   - A .txt file will contain the game status and will be loaded to fill in those variable
+      - Using boolean data type to determine whether one particular puzzle has been solved or not and a clue or hint has been discovered or not
+      - Using string data type to store the player's position (e.g. "A3")
+      - A integer showing how many items the players had, followed by a list of items
+      - The seed for randomization will be stored to ensure fairness
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
 3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
