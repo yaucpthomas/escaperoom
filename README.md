@@ -23,7 +23,7 @@ To motivate the players to continue the game, though a bit fantastical, this esc
       - Using boolean data type to determine whether one particular puzzle has been solved or not and a clue or hint has been discovered or not
       - Using string data type to store the player's position (e.g. "A3")
       - A integer showing how many items the players had, followed by a list of items
-      - The seed for randomization will be stored to ensure fairness
+      - The seed for randomization will be stored to ensure the hints, clues and passcodes will remain unchanged
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
 3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
