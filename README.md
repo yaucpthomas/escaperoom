@@ -28,7 +28,8 @@ To motivate the players to continue the game, though a bit fantastical, this esc
 4. File input/output (e.g., for [loading/saving game status](http://www.cplusplus.com/forum/beginner/106630/))
    - A .txt file will store a player's inventory, solved puzzle, position and progress. 
 5. Program codes in multiple files
-   - 
+   - Separate program codes to multiple files to make it easier to read the codes and more orgranised
+   
 6. Proper indentation and naming styles 
    - Indentation: K&R style based on [Indentation style](https://en.wikipedia.org/wiki/Indentation_style)
    - Naming Style: Function names directly based on own function 
