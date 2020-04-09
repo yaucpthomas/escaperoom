@@ -18,7 +18,7 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    - Random respawn point
    - Magic items (e.g. dice) for random rewards/penalties spawned at random time
    - Random passcodes or clues 
-   - Clues will spawn at random places
+   - Clues will spawn at random places (as long as it fits the narritive)
 2. Data structures for storing game status
    - A data structure named "player" will be used to store the player's status
       - Player's name
@@ -39,8 +39,8 @@ To motivate the players to continue the game, though a bit fantastical, this esc
       - The seed for randomization will be stored to ensure the hints, clues and passcodes will remain unchanged
 5. Program codes in multiple files
    - Separate program codes to multiple files to make it easier to read the codes and more orgranised
-      - A "tutorial.h" will be included which is about teaching players how the game works
-      - 
+      - A "tutorial.h" is about teaching players how the game works 
+      - A "map.h" includes all the commands regarding the map (e.g. "OpenMap")
 6. Proper indentation and naming styles 
    - Indentation: K&R style based on [Indentation style](https://en.wikipedia.org/wiki/Indentation_style)
    - Naming Style: Function names directly based on own function 
