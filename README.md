@@ -19,17 +19,23 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    - Magic items (e.g. dice) for random rewards/penalties spawned at random time
    - Random passcodes or clues 
 2. Data structures for storing game status
-   - A .txt file will contain the game status and will be loaded to fill in those variable
-      - Using boolean data type to determine whether one particular puzzle has been solved or not and a clue or hint has been discovered or not
-      - Using string data type to store the player's position (e.g. "A3")
-      - A integer showing how many items the players had, followed by a list of items
-      - The seed for randomization will be stored to ensure the hints, clues and passcodes will remain unchanged
+   - A data structure named "Player" will be used to store the player's status
+      - Player's name
+      - Player's inventory
+      - Player's location when the player save the game
+      - Player's seed for randomization at the beginning of the game
+      - Whether the player discovered a hint or not
+      - Whether the player solved a puzzle or not
    - A display bar to display the items in the backpack & update with the items received
    - Commands to display player current position (Paper map exists but without position update)
 3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
    - A dynamic array would be used to store the player's items 
 4. File input/output (e.g., for [loading/saving game status](http://www.cplusplus.com/forum/beginner/106630/))
    - A .txt file will store a player's inventory, solved puzzle, position, seed of randomization and progress. 
+      - Using boolean data type to determine whether one particular puzzle has been solved or not and a clue or hint has been discovered or not
+      - Using string data type to store the player's position (e.g. "A3")
+      - A integer showing how many items the players had, followed by a list of items
+      - The seed for randomization will be stored to ensure the hints, clues and passcodes will remain unchanged
 5. Program codes in multiple files
    - Separate program codes to multiple files to make it easier to read the codes and more orgranised
 6. Proper indentation and naming styles 
