@@ -1,4 +1,4 @@
-# escaperoom
+# Escape Room
 ## Team member 
 Ng To San (3035601619),  Yau Chin Pang (3035689257)
 
