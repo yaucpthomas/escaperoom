@@ -41,6 +41,8 @@ To motivate the players to continue the game, though a bit fantastical, this esc
    - Separate program codes to multiple files to make it easier to read the codes and more orgranised
       - A "tutorial.h" is about teaching players how the game works 
       - A "map.h" includes all the commands regarding the map (e.g. "OpenMap")
+      - A "LoadGame.h" is responsible to load all data from the file input
+      - A "SaveGame.h" is responsible to save all data to a file
 6. Proper indentation and naming styles 
    - Indentation: K&R style based on [Indentation style](https://en.wikipedia.org/wiki/Indentation_style)
    - Naming Style: Function names directly based on own function 
