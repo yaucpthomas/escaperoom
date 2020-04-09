@@ -1,6 +1,7 @@
 # Escape Room
 ## Team member 
-Ng To San (3035601619),  Yau Chin Pang (3035689257)
+Ng To San      3035601619
+Yau Chin Pang  3035689257
 
 ## Game Description with Basic Game Rules
 We would design an escape game, which includes kinds of general concepts in other similar games, such as discovering various clues, items, mysterious traps and traces, and different versions of endings. In this escape game, we will adapt the true story of the Cold War, which is a well-known espionage and betrayal in the Soviet Union. Players will act as a betrayed spy ([Pyotr Popov](https://en.wikipedia.org/wiki/Pyotr_Semyonovich_Popov)), who had just been caught and charged with treason with sufficient evidence before being ready to leave from his own intelligence agency. After long-time inhumane torture, the spy could only remember his own mission - get all the necessary information and escape asap, but unfortunately, he couldn't remember all the details of the information.
