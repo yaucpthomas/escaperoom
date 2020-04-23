@@ -16,10 +16,7 @@ To motivate the players to continue the game, though a bit fantastical, this esc
 
 ## Features / Functions
 1. Generation of random game sets or events
-   - Random respawn point
-   - Magic items (e.g. dice) for random rewards/penalties spawned at random time
    - Random passcodes or clues 
-   - Clues will spawn at random places (as long as it fits the narritive)
 2. Data structures for storing game status
    - A data structure named "player" will be used to store the player's status
       - Player's name
