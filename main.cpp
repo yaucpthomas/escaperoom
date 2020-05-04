@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include <ctime>
+#include <fstream>
 using namespace std;
 
 struct Player{
