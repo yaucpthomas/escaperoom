@@ -79,17 +79,17 @@ void StartNewGame(Player& player, Puzzle& puzzle){
 void StartScene(){
   cout<< "Commands:\n"
       << "grab <item>\n"
-      << "look at <object>\n"
+      << "lookat <object>\n"
       << "use <object>\n"
       << "use <object> <keyword/number>\n"
-      << "move to <room>\n"
+      << "moveto <room>\n"
       << "{ Remember to grab the object into the inventory before looking at it … }\n"
 
-      << "location \n"
-      << "open inventory\n"
-      << "save game\n"
-      << "load game\n"
-      << "list commands\n";
+      << "Location \n"
+      << "Inventory\n"
+      << "Savegame\n"
+      << "Loadgame\n"
+      << "Listcommands\n";
   this_thread::sleep_for (chrono::seconds(10));
 
   cout<<"\n\n(Door knocked)\n";
