@@ -10,7 +10,7 @@
 #include <chrono>
 using namespace std;
 
-void StartNewGame(Player& player);
+void StartNewGame(Player& player, Puzzle& puzzle);
 void StartScene();
 void Beginning();
 
@@ -31,7 +31,7 @@ int main()
   }
 
   if (command == "NewPlayer"){
-    StartNewGame(player);
+    StartNewGame(player, puzzle);
     StartScene();
   }
   else {
@@ -40,11 +40,16 @@ int main()
 
 }
 
-void StartNewGame(Player& player){
+void StartNewGame(Player& player, Puzzle& puzzle){
   cout<<"Type your favourite number (Must be positive integer)\n";
   int seed;
   cin>>seed;
   player.seed = seed;
+
+  puzzle.rooma = "kramer";
+  puzzle.pencode = "oleg";
+  puzzle.roombclock = 161059;
+  puzzle.roomd = 810364;
 
   cout<<"That's it! The Game will begin shortly........\n";
   this_thread::sleep_for (chrono::seconds(1));
@@ -60,8 +65,7 @@ void StartNewGame(Player& player){
 }
 
 void StartScene(){
-  cout<< "To play, press Enter to see more below…\n";
-      << "Commands:\n"
+  cout<< "Commands:\n"
       << "grab <item>\n"
       << "look at <object>\n"
       << "use <object>\n"
@@ -75,7 +79,7 @@ void StartScene(){
       << "load game\n"
       << "list commands\n";
   this_thread::sleep_for (chrono::seconds(10));
-    
+
   cout<<"(Door knocked)\n";
   this_thread::sleep_for (chrono::seconds(2));
   cout<<"Who’s there?\n";

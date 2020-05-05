@@ -5,6 +5,6 @@
 #include "player.h"
 #include "puzzle.h"
 
-void LoadGame(Player &playler, Puzzle &puzzle);
+void LoadGame(Player &player, Puzzle &puzzle);
 
 #endif
