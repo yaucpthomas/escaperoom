@@ -141,7 +141,7 @@ void Beginning(){
 
 
 
-    bool firststage = true
+     bool firststage = true
     while(firststage){
         void Beginning()
         getline(cin, command);
@@ -168,6 +168,7 @@ void Beginning(){
                     <<"Listcommands\n";
                     cin.ignore();
             }
+
             else if (command ==  "lookat self"){
                 cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
                 this_thread::sleep_for (chrono::seconds(5));
@@ -206,35 +207,37 @@ void Beginning(){
                                 cin.ignore();
                             }
                             else{
-                                cout<<"Seems it doesn't work properly. Try again."
+                                cout<<"Seems it doesn't work properly. Try again.\n"
                                 cin.ignore();
                             }
+                        cin.ignore();
                     }
                     else{
-                        cout<<"Seems it doesn't work properly. Try again."
+                        cout<<"Seems it doesn't work properly. Try again.\n"
                         cin.ignore();
                     }
                 cin.ignore();
             }
-            else if (command ==  "grab paperclip"){
+            else if (command == "grab paperclip"){
                 cout<<"You have grabbed the paperclip.\n";
+                player.inventory.push_back("paperclip");
                 if (command ==  "lookat paperclip"){
                     cout<<"This paper clip seems to be useful for certain purposes…\n";
                     cin.ignore();
                 }
-                else if (command ==  "use paperclip"){
+                else if (command == "use paperclip"){
                     cout<<"You try to bend the paperclip and use it to unlock the manacle.\n"
                         <<"Fortunately, it does work, and you are free to move around the room.\n";
                     firststage = false
                 }
                 else{
-                    cout<<"Seems it doesn't work properly. Try again."
+                    cout<<"Seems it doesn't work properly. Try again.\n"
                     cin.ignore();
                 }
                 cin.ignore();
             }
             else{
-                cout<<"Seems it doesn't work properly. Try again."
+                cout<<"Seems it doesn't work properly. Try again.\n"
                 cin.ignore();
             }
         return 0;
