@@ -37,6 +37,7 @@ int main()
   }
   else {
     LoadGame(player,puzzle,filename);
+    cout<<"You're now currently in room "<<player.location<<endl;
   }
 
 
