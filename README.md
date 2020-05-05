@@ -37,6 +37,7 @@ To motivate the players to continue the game, though a bit fantastical, this esc
       - The seed for randomization will be stored to ensure the hints, clues and passcodes will remain unchanged
 5. Program codes in multiple files
    - Separate program codes to multiple files to make it easier to read and more orgranised
+      - A "player.h" to define the data structure of the player
       - A "tutorial.h" is about teaching players how the game works 
       - A "map.h" includes all the commands regarding the map (e.g. "OpenMap")
       - A "LoadGame.h" is responsible to load all data from the file input
