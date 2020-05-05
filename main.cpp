@@ -140,7 +140,8 @@ void Beginning(){
 
 
 
-  while(true){
+    bool firststage = true
+    while(firststage){
         void Beginning()
         getline(cin, command);
             if (command == "Loadgame"){
@@ -164,21 +165,7 @@ void Beginning(){
                     <<"Savegame\n"
                     <<"Loadgame\n"
                     <<"Listcommands\n";
-            }
-            else if (command ==  "grab paperclip"){
-                cout<<"You have grabbed the paperclip.\n";
-                if (command ==  "lookat paperclip"){
-                    cout<<"This paper clip seems to be useful for certain purposes…\n";
-                }
-                else if (command ==  "use paperclip"){
-                    cout<<"You try to bend the paperclip and use it to unlock the manacle.\n"
-                        <<"Fortunately, it does work, and you are free to move around the room.\n";
-                }
-                else{
-                    cout<<"Seems it doesn't work properly. Try again."
                     cin.ignore();
-                    return Beginning;
-                }
             }
             else if (command ==  "lookat self"){
                 cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
@@ -202,7 +189,6 @@ void Beginning(){
                                     <<"pager may also help you, so do remember, take\n"
                                     <<"all docs before you leave. Good luck.”\n";
                                 cin.ignore();
-                                return Beginning;
                             }
                             else if (command == "lookat pen"){
                                 cout<<"“This pen is engraved with the name Penkovsky, what does it mean? ”\n";
@@ -211,34 +197,44 @@ void Beginning(){
                                 this_thread::sleep_for (chrono::seconds(4));
                                 cout<<"It seems that it has been modified for emergencies…\n";
                                 cin.ignore();
-                                return Beginning;
                             }
                             else if (command == "lookat ID card"){
                                 cout<<"You lookat the ID card and realize that this card is not yours.\n";
                                 this_thread::sleep_for (chrono::seconds(6));
                                 cout<<"Maybe the card is the informer who gives the notes to you...\n";
                                 cin.ignore();
-                                return Beginning;
                             }
                             else{
                                 cout<<"Seems it doesn't work properly. Try again."
                                 cin.ignore();
-                                return Beginning;
                             }
-                        }
+                    }
                     else{
                         cout<<"Seems it doesn't work properly. Try again."
                         cin.ignore();
-                        return Beginning;
                     }
                 cin.ignore();
-                return Beginning;
+            }
+            else if (command ==  "grab paperclip"){
+                cout<<"You have grabbed the paperclip.\n";
+                if (command ==  "lookat paperclip"){
+                    cout<<"This paper clip seems to be useful for certain purposes…\n";
+                    cin.ignore();
+                }
+                else if (command ==  "use paperclip"){
+                    cout<<"You try to bend the paperclip and use it to unlock the manacle.\n"
+                        <<"Fortunately, it does work, and you are free to move around the room.\n";
+                    firststage = false
+                }
+                else{
+                    cout<<"Seems it doesn't work properly. Try again."
+                    cin.ignore();
+                }
+                cin.ignore();
             }
             else{
                 cout<<"Seems it doesn't work properly. Try again."
                 cin.ignore();
-                return Beginning;
             }
-            return 0;
-        
+        return 0;
      }
