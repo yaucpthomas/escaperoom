@@ -62,6 +62,23 @@ void StartNewGame(Player& player){
 }
 
 void StartScene(){
+  cout<< "To play, press Enter to see more below…\n";
+      << "Commands:\n"
+      << "grab <item>\n"
+      << "look at <object>\n"
+      << "use <object>\n"
+      << "use <object> <keyword/number>\n"
+      << "move to <room>\n"
+      << "{ Remember to grab the object into the inventory before looking at it … }\n"
+
+      << "location \n"
+      << "open inventory\n"
+      << "save game\n"
+      << "load game\n"
+      << "list commands\n"
+      << "Enter\n";
+  this_thread::sleep_for (chrono::seconds(10));
+    
   cout<<"(Door knocked)\n";
   this_thread::sleep_for (chrono::seconds(2));
   cout<<"Who’s there?\n";
