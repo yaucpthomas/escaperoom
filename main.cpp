@@ -98,11 +98,12 @@ void StartScene(){
   this_thread::sleep_for (chrono::seconds(7));
   cout << "Your feet are also manacled.\n" ;
   this_thread::sleep_for (chrono::seconds(4));
-        
+} 
+
   cout << "You find your[self] in a sealed room named [room X].\n" ;
   this_thread::sleep_for (chrono::seconds(6));
   cout << "Earthworms and cockroaches are stretching their legs.\n" ;
   this_thread::sleep_for (chrono::seconds(6));
   cout << "There is a locked door in front of you with an electric door lock named [lock X] on its surface. (X = A, B, C, D)\n" ;
   cin.ignore();
-}
+
