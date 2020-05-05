@@ -8,3 +8,6 @@ main.o: main.cpp LoadGame.h player.h
 
 main: main.o LoadGame.o
 	g++ main.o LoadGame.o -o main
+
+clean:
+	rm -f *.o
