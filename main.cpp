@@ -12,6 +12,7 @@ using namespace std;
 
 void StartNewGame(Player& player);
 void StartScene();
+void Beginning();
 
 int main()
 {
@@ -59,6 +60,22 @@ void StartNewGame(Player& player){
 }
 
 void StartScene(){
+  cout<< "To play, press Enter to see more below…\n";
+      << "Commands:\n"
+      << "grab <item>\n"
+      << "look at <object>\n"
+      << "use <object>\n"
+      << "use <object> <keyword/number>\n"
+      << "move to <room>\n"
+      << "{ Remember to grab the object into the inventory before looking at it … }\n"
+
+      << "location \n"
+      << "open inventory\n"
+      << "save game\n"
+      << "load game\n"
+      << "list commands\n";
+  this_thread::sleep_for (chrono::seconds(10));
+    
   cout<<"(Door knocked)\n";
   this_thread::sleep_for (chrono::seconds(2));
   cout<<"Who’s there?\n";
@@ -94,9 +111,11 @@ void StartScene(){
   this_thread::sleep_for (chrono::seconds(4));
 }
 
+void Beginning(){
   cout << "You find your[self] in a sealed room named [room X].\n" ;
   this_thread::sleep_for (chrono::seconds(6));
   cout << "Earthworms and cockroaches are stretching their legs.\n" ;
   this_thread::sleep_for (chrono::seconds(6));
   cout << "There is a locked door in front of you with an electric door lock named [lock X] on its surface. (X = A, B, C, D)\n" ;
   cin.ignore();
+}
