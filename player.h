@@ -6,7 +6,6 @@
 
 struct Player{
   std::string location;
-  int seed;
   std::vector<std::string> inventory;
 };
 

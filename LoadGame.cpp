@@ -8,8 +8,7 @@
 #include <vector>
 using namespace std;
 
-void LoadGame(Player &player, Puzzle &puzzle){
-  string filename;
+void LoadGame(Player &player, Puzzle &puzzle, string &filename){
   ifstream fin;
   cout<<"What's your file name? (Must end with .txt and have no space)\n";
   cin>>filename;
@@ -29,11 +28,6 @@ void LoadGame(Player &player, Puzzle &puzzle){
     if (type == "location"){
         iss >> data;
         player.location = data;
-    }
-    else if (type == "seed"){
-        iss >> data;
-        int seed = stoi(data);
-        player.seed = seed;
     }
     else if (type == "inventory"){
         while(iss >> data){

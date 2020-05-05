@@ -6,6 +6,7 @@
 #include "player.h"
 #include "puzzle.h"
 #include "LoadGame.h"
+#include "SaveGame.h"
 #include <thread>
 #include <chrono>
 using namespace std;
@@ -19,7 +20,7 @@ int main()
   //To determine whether player is new or not
   Player player;
   Puzzle puzzle;
-  string command;
+  string command, filename = "";
   cout<<"Hello there. New player or load old game files?\n"
       <<"Type \"NewPlayer\" for New Player or \"LoadGame\" to Load Game Files\n";
   cin>>command;
@@ -35,8 +36,11 @@ int main()
     StartScene();
   }
   else {
-    LoadGame(player,puzzle);
+    LoadGame(player,puzzle,filename);
   }
+
+
+  SaveGame(player,puzzle,filename);
 
 }
 
@@ -44,12 +48,19 @@ void StartNewGame(Player& player, Puzzle& puzzle){
   cout<<"Type your favourite number (Must be positive integer)\n";
   int seed;
   cin>>seed;
-  player.seed = seed;
-
+  srand(seed);
+  //Initialise Inventory, puzzle
   puzzle.rooma = "kramer";
   puzzle.pencode = "oleg";
   puzzle.roombclock = 161059;
   puzzle.roomd = 810364;
+  puzzle.roombtoc = rand() % 900000 + 100000;
+  puzzle.roomc = rand() % 9000 + 1000;
+
+  player.location = "A";
+  player.inventory.push_back("notes");
+  player.inventory.push_back("pen");
+  player.inventory.push_back("ID_card");
 
   cout<<"That's it! The Game will begin shortly........\n";
   this_thread::sleep_for (chrono::seconds(1));
@@ -80,7 +91,7 @@ void StartScene(){
       << "list commands\n";
   this_thread::sleep_for (chrono::seconds(10));
 
-  cout<<"(Door knocked)\n";
+  cout<<"\n\n(Door knocked)\n";
   this_thread::sleep_for (chrono::seconds(2));
   cout<<"Who’s there?\n";
   this_thread::sleep_for (chrono::seconds(2));

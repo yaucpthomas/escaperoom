@@ -5,6 +5,6 @@
 #include "player.h"
 #include "puzzle.h"
 
-void LoadGame(Player &player, Puzzle &puzzle);
+void LoadGame(Player &player, Puzzle &puzzle, std::string &filename);
 
 #endif
