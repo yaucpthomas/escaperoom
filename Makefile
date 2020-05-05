@@ -1,6 +1,6 @@
 #MakeFile!
 
-LoadGame.o: LoadGame.cpp LoadGame.h
+LoadGame.o: LoadGame.cpp LoadGame.h player.h
 		g++ -c LoadGame.cpp
 
 main.o: main.cpp LoadGame.h player.h
