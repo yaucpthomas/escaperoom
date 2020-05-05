@@ -34,10 +34,7 @@ int main()
     StartScene();
   }
   else {
-    string file_loc;
-    cout<<"What is the name of your file? (It must inlude .txt at the end.)";
-    cin>>file_loc;
-
+    LoadGame(player,puzzle);
   }
 
 }

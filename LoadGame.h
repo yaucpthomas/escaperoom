@@ -3,7 +3,8 @@
 
 #include <string>
 #include "player.h"
+#include "puzzle.h"
 
-Player LoadGame(std::string file_loc);
+void LoadGame(Player &playler, Puzzle &puzzle);
 
 #endif
