@@ -17,10 +17,10 @@ void Beginning();
 
 int main()
 {
-  //To determine whether player is new or not
   Player player;
   Puzzle puzzle;
   string command, filename = "";
+  //To determine whether player is new or not
   cout<<"Hello there. New player or load old game files?\n"
       <<"Type \"NewPlayer\" for New Player or \"LoadGame\" to Load Game Files\n";
   cin>>command;
@@ -77,6 +77,7 @@ void StartNewGame(Player& player, Puzzle& puzzle){
 }
 
 void StartScene(){
+  //Inform user of basic commands
   cout<< "Commands:\n"
       << "grab <item>\n"
       << "look at <object>\n"
@@ -91,7 +92,7 @@ void StartScene(){
       << "load game\n"
       << "list commands\n";
   this_thread::sleep_for (chrono::seconds(10));
-
+  //Intro
   cout<<"\n\n(Door knocked)\n";
   this_thread::sleep_for (chrono::seconds(2));
   cout<<"Who’s there?\n";

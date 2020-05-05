@@ -4,8 +4,7 @@
 #include <string>
 
 struct Puzzle{
-  std::string rooma ;
-  std::string pencode;
+  std::string rooma, pencode;
   int roombclock, roomd, roombtoc, roomc;
 };
 

@@ -24,6 +24,7 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
   string line, type, data;
   while(getline(fin,line)){
     istringstream iss(line);
+    //Every words in a line and sort accordingly
     iss >> type;
     if (type == "location"){
         iss >> data;
