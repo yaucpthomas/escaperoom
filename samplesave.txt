@@ -1,0 +1,5 @@
+location A
+seed 100
+inventory notes pen ID_card
+roombtoc 12432
+roomc 13123
