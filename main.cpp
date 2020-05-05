@@ -76,8 +76,7 @@ void StartScene(){
       << "open inventory\n"
       << "save game\n"
       << "load game\n"
-      << "list commands\n"
-      << "Enter\n";
+      << "list commands\n";
   this_thread::sleep_for (chrono::seconds(10));
     
   cout<<"(Door knocked)\n";
