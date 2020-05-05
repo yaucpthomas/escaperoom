@@ -5,7 +5,7 @@
 #include <vector>
 
 struct Player{
-  std::string name, location;
+  std::string location;
   int seed;
   std::vector<std::string> inventory;
 };

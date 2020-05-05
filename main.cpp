@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include "player.h"
+#include "puzzle.h"
 #include "LoadGame.h"
 #include <thread>
 #include <chrono>
@@ -16,6 +17,7 @@ int main()
 {
   //To determine whether player is new or not
   Player player;
+  Puzzle puzzle;
   string command;
   cout<<"Hello there. New player or load old game files?\n"
       <<"Type \"NewPlayer\" for New Player or \"LoadGame\" to Load Game Files\n";
@@ -41,11 +43,6 @@ int main()
 }
 
 void StartNewGame(Player& player){
-  cout<<"What's your name?\n";
-  string temp;
-  cin>>temp;
-  player.name = temp;
-
   cout<<"Type your favourite number (Must be positive integer)\n";
   int seed;
   cin>>seed;
@@ -98,7 +95,7 @@ void StartScene(){
   this_thread::sleep_for (chrono::seconds(7));
   cout << "Your feet are also manacled.\n" ;
   this_thread::sleep_for (chrono::seconds(4));
-} 
+}
 
   cout << "You find your[self] in a sealed room named [room X].\n" ;
   this_thread::sleep_for (chrono::seconds(6));
@@ -106,4 +103,3 @@ void StartScene(){
   this_thread::sleep_for (chrono::seconds(6));
   cout << "There is a locked door in front of you with an electric door lock named [lock X] on its surface. (X = A, B, C, D)\n" ;
   cin.ignore();
-
