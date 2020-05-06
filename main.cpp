@@ -137,9 +137,12 @@ void Beginning(){
   cin.ignore();
 }
 
+  
 
 
-    while(true){
+
+    bool firststage = true
+    while(firststage){
         void Beginning()
         getline(cin, command);
             if (command == "Loadgame"){
