@@ -59,9 +59,6 @@ void StartNewGame(Player& player, Puzzle& puzzle){
   puzzle.roomc = rand() % 9000 + 1000;
 
   player.location = "A";
-  player.inventory.push_back("notes");
-  player.inventory.push_back("pen");
-  player.inventory.push_back("ID_card");
 
   cout<<"That's it! The Game will begin shortly........\n";
   this_thread::sleep_for (chrono::seconds(1));
@@ -137,11 +134,8 @@ void Beginning(){
   cin.ignore();
 }
 
-  
 
-
-
-    bool firststage = true
+  bool firststage = true;
     while(firststage){
         void Beginning()
         getline(cin, command);
@@ -179,9 +173,9 @@ void Beginning(){
                     if (command ==  "lookat pocket"){
                         cout<<"You go through your pocket.\n";
                         this_thread::sleep_for (chrono::seconds(3));
-                        cout<<"You find a few pieces of [notes], a [pen] and your agent [ID card].\n";
+                        cout<<"You find a few pieces of [notes], a [pen] and your agent [ID_card].\n";
                             if (command ==  "lookat notes"){
-                                cout<<"The notes hold together with a [paper clip]\n"
+                                cout<<"The notes hold together with a [paper_clip]\n"
                                     <<"“You may not know who I am but I do know you\n"
                                     <<"well, and I do know what will happen to you next.\n"
                                     <<"Use the puzzles to get password and escape this\n"
