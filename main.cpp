@@ -107,7 +107,19 @@ int main(){
             this_thread::sleep_for (chrono::seconds(4));
             cout<<"It seems that it has been modified for emergencies…\n";
           }
-
+          else if ((command == "use pen") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
+            cout<<"You press the small button on the pen though it seems to be kinds of weird.\n";
+            this_thread::sleep_for (chrono::seconds(7));
+            cout<<"The pen splits after your exertion, and then the inner part pops up.\n";
+            this_thread::sleep_for (chrono::seconds(7));
+            cout<<"“Damn it! A 4-letter electric lock!? Are you sure about that!?”\n";
+            this_thread::sleep_for (chrono::seconds(6));
+            cout<<"“OK… Let me just not think how the electronic lock is made.”\n";
+            this_thread::sleep_for (chrono::seconds(6));
+            cout<<"“Man, what’s the password then? How come I know the password?\n";
+            this_thread::sleep_for (chrono::seconds(6));
+            cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
+          }
           else if ((command == "lookat ID card") && (find(player.lookat.begin(),player.lookat.end(),"ID_card")) != end(player.lookat)){
             cout<<"You look at the ID card and realize that this card is not yours.\n";
             this_thread::sleep_for (chrono::seconds(6));
