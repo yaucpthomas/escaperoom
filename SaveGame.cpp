@@ -34,13 +34,41 @@ void SaveGame(Player player, Puzzle puzzle, string filename){
   //Write all the data to the file
   fout<<"location "<<player.location<<endl;
   fout<<"inventory ";
-  for (int i = 0; i < player.inventory.size() - 1; ++i){
-    fout<<player.inventory[i]<<" ";
+  if (player.inventory.size() > 0){
+    for (int i = 0; i < player.inventory.size() - 1; ++i){
+      fout<<player.inventory[i]<<" ";
+    }
+    fout<<player.inventory[player.inventory.size()-1]<<endl;
   }
-  fout<<player.inventory[player.inventory.size()-1]<<endl;
+  else{
+    fout<<endl;
+  }
   fout<<"roombtoc "<<puzzle.roombtoc<<endl;
   fout<<"roomc "<<puzzle.roomc<<endl;
+  fout<<"lookat ";
+  if (player.lookat.size() > 0){
+    for (int i = 0; i < player.lookat.size() - 1; ++i){
+      fout<<player.lookat[i]<<" ";
+    }
+      fout<<player.lookat[player.lookat.size()-1]<<endl;
+  }
+  else{
+    fout<<endl;
+  }
 
+  if (player.firststage){
+    fout<<"firststage 1"<<endl;
+  }
+  else{
+    fout<<"firststage 0"<<endl;
+  }
+
+  if (player.secondstage){
+    fout<<"secondstage 1"<<endl;
+  }
+  else{
+    fout<<"secondstage 0"<<endl;
+  }
   fout.close();
   cout<<"Saved all your current progress!\n";
 }
