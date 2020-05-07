@@ -54,9 +54,9 @@ int main(){
           else if (command == "Listcommands"){
               cout<<"\nCommands:\n"
                   <<"grab <item>\n"
-                  <<"lookat <object>\n"
-                  <<"use <object>\n"
-                  <<"use <object> <keyword/number>\n"
+                  <<"lookat <item>\n"
+                  <<"use <item>\n"
+                  <<"use <item> <keyword/number>\n"
                   <<"moveto <room>\n"
                   <<"[Remember to grab the object into the inventory before looking at it …]\n\n"
 
@@ -248,3 +248,121 @@ void Beginning(){
   cout << "Game has started! You may start to type your commands.\n"<<endl;
 
 }
+
+// while(secondstage){
+//          Beginning()
+//          getline(cin, command);
+//          for (player.location = "A";){
+//              if (command == "lookat room A"){
+//                  cout<<"You concentrate your tired mind,\n";
+//                  this_thread::sleep_for (chrono::seconds(5));
+//                  cout<<"walk around the messy room,\n";
+//                  this_thread::sleep_for (chrono::seconds(4));
+//                  cout<<"and take a closer look at the surroundings.\n";
+//                  this_thread::sleep_for (chrono::seconds(6));
+//                  cout<<"You find that there are a [card reader] beside the computer,\n";
+//                  this_thread::sleep_for (chrono::seconds(7));
+//                  cout<<"a small pack of chewing [gum]\n";
+//                  this_thread::sleep_for (chrono::seconds(5));
+//                  cout<<"and a file covering a document named Uncensored Proofread Context [Part A] on the floor.\n";
+//                  cin.ignore();
+//              }
+//              else if (command == "grab gum"){
+//                  cout<<"You have grabbed the gum.\n";
+//                  player.inventory.push_back("gum");
+//                  cin.ignore();
+//              }
+//              else if (command == "grab card reader") {
+//                  cout<<"You have grabbed the card reader.\n";
+//                  player.inventory.push_back("card reader");
+//                  cin.ignore();
+//              }
+//              else if (command == "grab Part A") {
+//                  cout<<"You have grabbed the Part A.\n";
+//                  player.inventory.push_back("Part A");
+//                  cin.ignore();
+//              }
+//          }
+//          for (player.location = "B";){
+//              if (command == "lookat room B"){
+//                  cout<<"You concentrate your tired mind,\n";
+//                  this_thread::sleep_for (chrono::seconds(5));
+//                  cout<<"walk around the messy room,\n";
+//                  this_thread::sleep_for (chrono::seconds(4));
+//                  cout<<"and take a closer look at the surroundings.\n";
+//                  this_thread::sleep_for (chrono::seconds(6));
+//                  cout<<"You find that there are a small digital [clock],a [pager]\n";
+//                  this_thread::sleep_for (chrono::seconds(7));
+//                  cout<<"and a file covering a document named Uncensored Proofread Context [Part B] on the floor.\n";
+//                  cin.ignore();
+//              }
+//              else if (command == "grab clock"){
+//                  cout<<"You have grabbed the clock.\n";
+//                  player.inventory.push_back("clock");
+//                  cin.ignore();
+//              }
+//              else if (command == "grab pager") {
+//                  cout<<"You have grabbed the pager.\n";
+//                  player.inventory.push_back("pager");
+//                  cin.ignore();
+//              }
+//              else if (command == "grab Part B") {
+//                  cout<<"You have grabbed the Part B.\n";
+//                  player.inventory.push_back("Part B");
+//                  cin.ignore();
+//              }
+//          }
+//          for (player.location = "C";){
+//              if (command == "lookat room C"){
+//                  cout<<"You concentrate your tired mind,\n";
+//                  this_thread::sleep_for (chrono::seconds(5));
+//                  cout<<"walk around the messy room,\n";
+//                  this_thread::sleep_for (chrono::seconds(4));
+//                  cout<<"and take a closer look at the surroundings.\n";
+//                  this_thread::sleep_for (chrono::seconds(6));
+//                  cout<<"You find that there is a seemingly broken [projector] and a reel [scroll box]\n";
+//                  cin.ignore();
+//              }
+//              else if (command == "grab projector"){
+//                  cout<<"You have grabbed the projector.\n";
+//                  player.inventory.push_back("projector");
+//                  cin.ignore();
+//              }
+//              else if (command == "grab scroll box") {
+//                  cout<<"You have grabbed the scroll box.\n";
+//                  player.inventory.push_back("scroll box");
+//                  cin.ignore();
+//              }
+//          }
+//                  for (player.location = "D";){
+//              if (command == "lookat room D"){
+//                  cout<<"You concentrate your tired mind,\n";
+//                  this_thread::sleep_for (chrono::seconds(5));
+//                  cout<<"walk around the messy room,\n";
+//                  this_thread::sleep_for (chrono::seconds(4));
+//                  cout<<"and take a closer look at the surroundings.\n";
+//                  this_thread::sleep_for (chrono::seconds(6));
+//                  cout<<"You find that there are a [poster] pasted on the desk,\n";
+//                  this_thread::sleep_for (chrono::seconds(7));
+//                  cout<<"a [color paper] with incomprehensible squared holes on it,\n";
+//                  this_thread::sleep_for (chrono::seconds(7));
+//                  cout<<"and a file covering a document named Uncensored Proofread Context [Part D] on the floor.\n";
+//                  cin.ignore();
+//              }
+//              else if (command == "grab poster"){
+//                  cout<<"You have grabbed the poster.\n";
+//                  player.inventory.push_back("poster");
+//                  cin.ignore();
+//              }
+//              else if (command == "grab color paper") {
+//                  cout<<"You have grabbed the color paper.\n";
+//                  player.inventory.push_back("color paper");
+//                  cin.ignore();
+//              }
+//              else if (command == "grab Part D") {
+//                  cout<<"You have grabbed the Part D.\n";
+//                  player.inventory.push_back("Part D");
+//                  cin.ignore();
+//              }
+//          }
+//      }
