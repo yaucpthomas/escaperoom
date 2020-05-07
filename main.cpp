@@ -150,9 +150,9 @@ void Beginning(){
             else if (command == "Listcommands"){
                 cout<<"Commands:\n"
                     <<"grab <item>\n"
-                    <<"lookat <object>\n"
-                    <<"use <object>\n"
-                    <<"use <object> <keyword/number>\n"
+                    <<"lookat <item>\n"
+                    <<"use <item>\n"
+                    <<"use <item> <keyword/number>\n"
                     <<"moveto <room>\n"
                     <<"[Remember to grab the object into the inventory before looking at it …]\n"
 
