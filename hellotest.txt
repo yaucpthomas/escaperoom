@@ -1,0 +1,7 @@
+location A
+inventory notes pen ID_card paper_clip
+roombtoc 494139
+roomc 7703
+lookat pocket notes pen ID_card paper_clip
+firststage 1
+secondstage 0
