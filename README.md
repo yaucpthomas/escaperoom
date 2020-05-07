@@ -12,8 +12,6 @@ Therefore, the rules to complete the mission are:
 3. Find ways to make CIA (America) recognize own identity after successfully escaping
    (*1 The old building used to be a human experiment factory, which may retain traces of people trying to escape from here.)
 
-To motivate the players to continue the game, though a bit fantastical, this escape game will include the respawn function with random respawn points instead of restarting the current state. 
-
 ## Features / Functions
 1. Generation of random game sets or events
    - Random passcodes or clues 
