@@ -434,6 +434,7 @@ void Beginning(Player playera){
 //              cout<<"You find that the scroll box inside has a mysterious [painting] and a document named Uncensored Proofread Context [Part C].\n";
 //              player.lookat.push_back("painting");
 //              player.lookat.push_back("Part C");
+//          }
 //          else if (command == "lookat Part C" && (find(player.lookat.begin(),player.lookat.end(),"Part C")) != end(player.lookat)){
 //              cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
 //              this_thread::sleep_for (chrono::seconds(7));
