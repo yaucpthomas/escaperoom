@@ -45,7 +45,30 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
         int roomc = stoi(data);
         puzzle.roomc = roomc;
     }
+    else if (type == "lookat"){
+      while(iss >> data){
+        player.lookat.push_back(data);
+      }
+    }
+    else if (type == "firststage"){
+      iss >> data;
+      if (data == "1"){
+        player.firststage = true;
+      }
+      else {
+        player.firststage = false;
+      }
+    }
+    else if (type == "secondstage"){
+      iss >> data;
+      if (data == "1"){
+        player.secondstage = true;
+      }
+      else {
+        player.secondstage = false;
+      }
+    }
   }
-
+  cout<<"Loaded your game progress!"<<endl;
   fin.close();
 }
