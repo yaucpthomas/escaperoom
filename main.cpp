@@ -148,13 +148,13 @@ void StartNewGame(Player& player, Puzzle& puzzle){
   cin>>seed;
   srand(seed);
   //Initialise Inventory, puzzle
-  puzzle.rooma = "kramer";
   puzzle.pencode = "oleg";
+  puzzle.rooma = "kramer";
   puzzle.roombclock = 161059;
-  puzzle.roomd = 810364;
-  puzzle.roombtoc = rand() % 900000 + 100000;
+  puzzle.roomb = rand() % 900000 + 100000;
   puzzle.roomc = rand() % 9000 + 1000;
-
+  puzzle.roomd = 810364;
+  
   player.firststage = true;
   player.secondstage = false;
   player.location = "A";
