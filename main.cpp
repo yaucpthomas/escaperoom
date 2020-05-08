@@ -74,7 +74,7 @@ int main(){
           }
           else if (command == "moveto") {
               cout<<"Which room do you want to get in?\n"
-                  <<"Select the room: A, B, C, D.\n"
+                  <<"Select the room: A, B, C, D.\n";
               RoomMove(player, puzzle, command)
           }
           else if (command ==  "lookat self"){
