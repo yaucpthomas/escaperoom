@@ -189,21 +189,21 @@ int main(){
                    player.lookat.push_back("card reader");
                    player.lookat.push_back("gum");
                    player.lookat.push_back("Part A");
-               }
-               else if ((command == "grab gum") && (find(player.lookat.begin(),player.lookat.end(),"gum")) != end(player.lookat) && (player.location == "A")){
+            }
+            else if ((command == "grab gum") && (find(player.lookat.begin(),player.lookat.end(),"gum")) != end(player.lookat) && (player.location == "A")){
                    cout<<"You have grabbed the gum.\n";
                    player.inventory.push_back("gum");
-               }
-               else if (command == "grab card reader" && (find(player.lookat.begin(),player.lookat.end(),"card reader")) != end(player.lookat) && (player.location == "A")) {
+            }
+            else if (command == "grab card reader" && (find(player.lookat.begin(),player.lookat.end(),"card reader")) != end(player.lookat) && (player.location == "A")) {
                    cout<<"You have grabbed the card reader.\n";
                    player.inventory.push_back("card reader");
-               }
-               else if (command == "grab Part A" && (find(player.lookat.begin(),player.lookat.end(),"Part A")) != end(player.lookat) && (player.location == "A")) {
+            }
+            else if (command == "grab Part A" && (find(player.lookat.begin(),player.lookat.end(),"Part A")) != end(player.lookat) && (player.location == "A")) {
                    cout<<"You have grabbed the Part A.\n";
                    player.inventory.push_back("Part A");
-               }
+            }
 
-               if ((command == "lookat room B") && (player.location == "B")){
+            else if ((command == "lookat room B") && (player.location == "B")){
                   cout<<"You concentrate your tired mind,\n";
                   this_thread::sleep_for (chrono::seconds(5));
                   cout<<"walk around the messy room,\n";
@@ -216,21 +216,21 @@ int main(){
                   player.lookat.push_back("clock");
                   player.lookat.push_back("pager");
                   player.lookat.push_back("Part B");
-                }
-                else if (command == "grab clock" && (find(player.lookat.begin(),player.lookat.end(),"clock")) != end(player.lookat) && (player.location == "B")){
+            }
+            else if (command == "grab clock" && (find(player.lookat.begin(),player.lookat.end(),"clock")) != end(player.lookat) && (player.location == "B")){
                   cout<<"You have grabbed the clock.\n";
                   player.inventory.push_back("clock");
-                }
-                else if (command == "grab pager" && (find(player.lookat.begin(),player.lookat.end(),"pager")) != end(player.lookat) && (player.location == "B")) {
+            }
+            else if (command == "grab pager" && (find(player.lookat.begin(),player.lookat.end(),"pager")) != end(player.lookat) && (player.location == "B")) {
                   cout<<"You have grabbed the pager.\n";
                   player.inventory.push_back("pager");
-                }
-                else if (command == "grab Part B" && (find(player.lookat.begin(),player.lookat.end(),"Part B")) != end(player.lookat) && (player.location == "B")) {
+            }
+            else if (command == "grab Part B" && (find(player.lookat.begin(),player.lookat.end(),"Part B")) != end(player.lookat) && (player.location == "B")) {
                   cout<<"You have grabbed the Part B.\n";
                   player.inventory.push_back("Part B");
-                }
+            }
 
-                if ((command == "lookat room C") && (player.location == "C")){
+            else if ((command == "lookat room C") && (player.location == "C")){
                   cout<<"You concentrate your tired mind,\n";
                   this_thread::sleep_for (chrono::seconds(5));
                   cout<<"walk around the messy room,\n";
@@ -240,15 +240,15 @@ int main(){
                   cout<<"You find that there is a seemingly broken [projector] and a reel [scroll box]\n";
                   player.lookat.push_back("projector");
                   player.lookat.push_back("scroll box");
-                }
-               else if (command == "grab projector" && (find(player.lookat.begin(),player.lookat.end(),"projector")) != end(player.lookat) && (player.location == "C")){
+            }
+            else if (command == "grab projector" && (find(player.lookat.begin(),player.lookat.end(),"projector")) != end(player.lookat) && (player.location == "C")){
                   cout<<"You have grabbed the projector.\n";
                   player.inventory.push_back("projector");
-               }
-               else if (command == "grab scroll box" && (find(player.lookat.begin(),player.lookat.end(),"scroll box")) != end(player.lookat) && (player.location == "C")) {
+            }
+            else if (command == "grab scroll box" && (find(player.lookat.begin(),player.lookat.end(),"scroll box")) != end(player.lookat) && (player.location == "C")) {
                   cout<<"You have grabbed the scroll box.\n";
                   player.inventory.push_back("scroll box");
-               }
+            }
 
                else if ((command == "lookat room D") && (player.location == "D")){
                   cout<<"You concentrate your tired mind,\n";
