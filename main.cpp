@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <ctime>
 #include <fstream>
 #include <vector>
 #include <thread>
@@ -155,10 +156,7 @@ int main(){
 
 
 void StartNewGame(Player& player, Puzzle& puzzle){
-  cout<<"Type your favourite number (Must be positive integer)\n";
-  int seed;
-  cin>>seed;
-  srand(seed);
+  srand(time(NULL));
   //Initialise Inventory, puzzle
   puzzle.pencode = "oleg";
   puzzle.rooma = "kramer";
@@ -166,7 +164,7 @@ void StartNewGame(Player& player, Puzzle& puzzle){
   puzzle.roomb = rand() % 900000 + 100000;
   puzzle.roomc = rand() % 9000 + 1000;
   puzzle.roomd = 810364;
-  
+
   player.firststage = true;
   player.secondstage = false;
   player.location = "A";
@@ -187,6 +185,7 @@ void StartNewGame(Player& player, Puzzle& puzzle){
 
 void StartScene(){
   //Inform user of basic commands
+  string confirm;
   cout<< "Commands:\n"
       << "grab <item>\n"
       << "lookat <object>\n"
@@ -200,8 +199,13 @@ void StartScene(){
       << "Inventory\n"
       << "Savegame\n"
       << "Loadgame\n"
-      << "Listcommands\n";
-  this_thread::sleep_for (chrono::seconds(10));
+      << "Listcommands\n"
+      << "Type \"next\" to proceed.\n";
+  cin >> confirm;
+  while (confirm != "next"){
+    cout<< "Type \"next\" to proceed.\n";
+    cin>>confirm;
+  }
   //Intro
   cout<<"\n\n(Door knocked)\n";
   this_thread::sleep_for (chrono::seconds(2));
@@ -259,7 +263,7 @@ void Beginning(Player playera){
   cout << "Game has started! You may start to type your commands.\n"<<endl;
 
 }
-
+// getline(cin,command);
 // while(secondstage){
 //          getline(cin, command);
 //          if (player.location = "A";){
@@ -423,7 +427,7 @@ void Beginning(Player playera){
 //          }
 //          else if (command == "use pager" && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory)){
 //              cout<<"You press the CIA logo at the top left corner on the pager and something shows on the little screen.\n";
-//              cout<<"CS : _ _ _ _ _ _";
+//              cout<<"CS : _ _ _ _ _ _\n";
 //          }
 //          else if (command == "lookat Part B" && (find(player.lookat.begin(),player.lookat.end(),"Part B")) != end(player.lookat)){
 //              cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
