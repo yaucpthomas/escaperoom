@@ -22,8 +22,9 @@ Therefore, the rules to complete the mission are:
       - What did the player discover before
       - First stage, second stage status
    - A data structure named "player" will be used to store the player's status
-3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
-   - A dynamic array would be used to store the player's items 
+3. Dynamic memory management 
+   - A vector named inventory will be used to store inventory
+   - A vector named lookat will store what did the player discover throughout the game to ensure the player wouldn't pick up or use an item before he or she discovered it. 
 4. File input/output (e.g., for [loading/saving game status](http://www.cplusplus.com/forum/beginner/106630/))
    - A .txt file will store a player's inventory, solved puzzle, position and progress.
       - Using boolean data type to determine whether a room's door's lock has been unlocked or not
