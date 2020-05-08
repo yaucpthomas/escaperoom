@@ -96,6 +96,10 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
       }
     }
   }
+  puzzle.pencode = "oleg";
+  puzzle.rooma = "kramer";
+  puzzle.roombclock = 161059;
+  puzzle.roomd = 810364;
   cout<<"Loaded your game progress!"<<endl;
   fin.close();
 }
