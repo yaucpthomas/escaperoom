@@ -25,7 +25,7 @@ Therefore, the rules to complete the mission are:
 3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
    - A dynamic array would be used to store the player's items 
 4. File input/output (e.g., for [loading/saving game status](http://www.cplusplus.com/forum/beginner/106630/))
-   - A .txt file will store a player's inventory, solved puzzle, position, seed of randomization and progress. 
+   - A .txt file will store a player's inventory, solved puzzle, position and progress.
       - Using boolean data type to determine whether a room's door's lock has been unlocked or not
       - Using string data type to store the player's position (e.g. "A")
       - Player's inventory
