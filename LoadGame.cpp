@@ -41,11 +41,6 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
         int roomb = stoi(data);
         puzzle.roomb = roomb;
     }
-    else if (type == "roomc"){
-        iss >> data;
-        int roomc = stoi(data);
-        puzzle.roomc = roomc;
-    }
     else if (type == "lookat"){
       while(iss >> data){
         replace(data.begin(), data.end(), '_', ' ');
@@ -102,6 +97,7 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
   puzzle.rooma = "kramer";
   puzzle.roombclock = 161059;
   puzzle.roomd = 810364;
+  puzzle.roomc = 896424;
   cout<<"Loaded your game progress!"<<endl;
   fin.close();
 }

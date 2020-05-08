@@ -49,7 +49,6 @@ void SaveGame(Player player, Puzzle puzzle, string filename){
     fout<<endl;
   }
   fout<<"roomb "<<puzzle.roomb<<endl;
-  fout<<"roomc "<<puzzle.roomc<<endl;
   fout<<"lookat ";
   if (player.lookat.size() > 0){
     for (int i = 0; i < player.lookat.size() - 1; ++i){
