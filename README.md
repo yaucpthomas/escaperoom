@@ -14,36 +14,30 @@ Therefore, the rules to complete the mission are:
 
 ## Features / Functions
 1. Generation of random game sets or events
-   - Random passcodes or clues 
+   - Random passcode for Room C
 2. Data structures for storing game status
    - A data structure named "player" will be used to store the player's status
-      - Player's name
       - Player's inventory
       - Player's location when the player save the game
-      - Player's seed for randomization at the beginning of the game
-      - Whether the player discovered a hint or not
-      - Whether the player solved a puzzle or not
-   - A display bar to display the items in the backpack & update with the items received
-   - Commands to display player current position (Paper map exists but without position update)
+      - What did the player discover before
+      - First stage, second stage status
+   - A data structure named "player" will be used to store the player's status
 3. Dynamic memory management [Dynamic Memory](http://www.cplusplus.com/doc/tutorial/dynamic/)
    - A dynamic array would be used to store the player's items 
 4. File input/output (e.g., for [loading/saving game status](http://www.cplusplus.com/forum/beginner/106630/))
    - A .txt file will store a player's inventory, solved puzzle, position, seed of randomization and progress. 
-      - Using boolean data type to determine whether one particular puzzle has been solved or not and a clue or hint has been discovered or not
-      - Using string data type to store the player's position (e.g. "A3")
-      - A integer showing how many items the players had, followed by a list of items
-      - The seed for randomization will be stored to ensure the hints, clues and passcodes will remain unchanged
+      - Using boolean data type to determine whether a room's door's lock has been unlocked or not
+      - Using string data type to store the player's position (e.g. "A")
+      - Player's inventory
+      - What did the player discover before
+      - Status of stages the player in
+      - Passcode of Room B (Since it is randomized)
 5. Program codes in multiple files
    - Separate program codes to multiple files to make it easier to read and more orgranised
       - A "player.h" to define the data structure of the player
-      - A "tutorial.h" is about teaching players how the game works 
-      - A "map.h" includes all the commands regarding the map (e.g. "OpenMap")
+      - A "puzzle.h" to define the data structure for the puzzles
       - A "LoadGame.h" is responsible to load all data from the file input
       - A "SaveGame.h" is responsible to save all data to a file
-6. Proper indentation and naming styles 
-   - Indentation: K&R style based on [Indentation style](https://en.wikipedia.org/wiki/Indentation_style)
-   - Naming Style: Function names directly based on own function 
-      e.g. `Action(command)` for executing different commands, `UseItem(item)` for using specific item, etc...
-7. In-code documentation
-   - Command Explanations
-   - Item Explanations
+
+## Instructions
+Download all files except for the .txt file. Use your terminal and move to the directory of the game that is located at. In your terminal, type `make main` to compile the game into executable file called "main". Type `./main` to start the game and follow the in-game instructions. 
