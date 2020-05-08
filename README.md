@@ -14,7 +14,7 @@ Therefore, the rules to complete the mission are:
 
 ## Features / Functions
 1. Generation of random game sets or events
-   - Random passcode for Room C
+   - Random passcode for Room B
 2. Data structures for storing game status
    - A data structure named "player" will be used to store the player's status
       - Player's inventory
