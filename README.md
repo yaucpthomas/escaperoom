@@ -21,7 +21,8 @@ Therefore, the rules to complete the mission are:
       - Player's location when the player save the game
       - What did the player discover before
       - First stage, second stage status
-   - A data structure named "player" will be used to store the player's status
+   - A data structure named "puzzle" will be used to store the details of the puzzle.
+      - All the passcodes for the puzzle in each room and each door lock will be stored in puzzle data structures.
 3. Dynamic memory management 
    - A vector named inventory will be used to store inventory
    - A vector named lookat will store what did the player discover throughout the game to ensure the player wouldn't pick up or use an item before he or she discovered it. 
@@ -41,4 +42,4 @@ Therefore, the rules to complete the mission are:
       - A "SaveGame.h" is responsible to save all data to a file
 
 ## Instructions
-Download all files except for the .txt file. Use your terminal and move to the directory of the game that is located at. In your terminal, type `make main` to compile the game into executable file called "main". Type `./main` to start the game and follow the in-game instructions. 
+Download all files except for the .txt file. Use your terminal and move to the directory that the game is located at. In your terminal, type `make main` to compile the game into executable file called "main". Type `./main` to start the game and follow the in-game instructions. 
