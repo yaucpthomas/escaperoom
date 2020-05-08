@@ -17,6 +17,7 @@ void StartNewGame(Player& player, Puzzle& puzzle);
 void StartScene();
 void Beginning(Player player);
 void Inventory(Player player);
+void RoomMove(Player player,Puzzle puzzle,string command);
 
 int main(){
   Player player;
@@ -61,9 +62,9 @@ int main(){
                   <<"grab <item>\n"
                   <<"lookat <item>\n"
                   <<"use <item>\n"
-                  <<"use <item> <keyword/number>\n"
-                  <<"moveto <room>\n"
-                  <<"[Remember to grab the object into the inventory before looking at it …]\n\n"
+                  <<"use <item> <keyword/number/item>\n"
+                  <<"moveto \n"
+                  <<"[REMEMBER TO GRABb the object into the inventory before looking at it …]\n\n"
 
                   <<"Location \n"
                   <<"Inventory\n"
@@ -74,8 +75,8 @@ int main(){
           }
           else if (command == "moveto") {
               cout<<"Which room do you want to get in?\n"
-                  <<"Select the room: A, B, C, D.\n";
-              RoomMove(player, puzzle, command)
+                  <<"Type A, B, C, D to move to that respective\n";
+              RoomMove(player, puzzle, command);
           }
           else if (command ==  "lookat self"){
               cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
@@ -112,6 +113,8 @@ int main(){
           }
           else if ((command == "lookat pen") && (find(player.lookat.begin(),player.lookat.end(),"pen")) != end(player.lookat)){
             cout<<"“This pen is engraved with the name Penkovsky, what does it mean? ”\n";
+            this_thread::sleep_for (chrono::seconds(6));
+            cout<<"“I think the pen belongs to someone else, I think?”\n";
             this_thread::sleep_for (chrono::seconds(6));
             cout<<"And there is a small button on this pen.\n";
             this_thread::sleep_for (chrono::seconds(4));
@@ -318,13 +321,13 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(7));
                 cout<<"It looks like it won’t turn on without a suitable card…\n";
             }
-            else if ((command == "use ID card") && (find(player.inventory.begin(),player.inventory.end(),"ID card")!= end(player.inventory))
+            else if (((command == "use ID card card reader") || (command == "use ID card card reader")) && (find(player.inventory.begin(),player.inventory.end(),"ID card")!= end(player.inventory))
                                               && (find(player.inventory.begin(),player.inventory.end(),"card reader") != end(player.inventory))){
                 cout<<"You realize that you have an ID card in your pocket that the card reader may work if you insert the ID card.\n";
                 this_thread::sleep_for (chrono::seconds(7));
                 cout<<"“If everything goes the right place, it should be a right choice to insert it. Just take a try… Great! Something just pops up. Ehhh, crazy stuff again ?”";
                 cout<<"Caesar says: “A->F && {1:18 2:6 2:11 3:2 4:15 5:28}”\n"
-                    <<"PW:_ _ _ _ _ _\n"
+                    <<"PW:_ _ _ _ _ _\n\n"
                     <<"Wzns rd qnkj ns ymj mtwwtw,\n"
                     <<"Jxhfuj fx rd rfotw,\n"
                     <<"Afsnxm bnymtzy fsd xnlsx,\n"
@@ -347,7 +350,7 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(5));
                 cout<<"“Maybe using some tools can do this stuff...”\n";
             }
-            else if ((command == "use screwdriver") && (find(player.inventory.begin(),player.inventory.end(),"screwdriver") != end(player.inventory))
+            else if (((command == "use screwdriver clock") || (command == "use clock screwdriver")) && (find(player.inventory.begin(),player.inventory.end(),"screwdriver") != end(player.inventory))
                                                   && (find(player.inventory.begin(),player.inventory.end(),"clock") != end(player.inventory))){
                 cout<<"You realize that you can use the head of the screwdriver in your pen to open the trigger, and it does work.\n";
                 this_thread::sleep_for (chrono::seconds(7));
@@ -441,20 +444,20 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(7));
                 cout<<"and meanwhile, some ideas crop up from your mind…\n";
             }
-            else if ((command == "use penlight" )&& (find(player.inventory.begin(),player.inventory.end(),"penlight")) != end(player.inventory)
+            else if (((command == "use penlight poster")|| (command == "use poster penlight"))&& (find(player.inventory.begin(),player.inventory.end(),"penlight")) != end(player.inventory)
                                                && (find(player.inventory.begin(),player.inventory.end(),"poster")) != end(player.inventory)){
                 cout<<"You go through your pocket to find something useful, and you remember you’ve got a penlight from your pen.\n";
                 this_thread::sleep_for (chrono::seconds(5));
                 cout<<"“OMG. I’m smart af boi. OK, let just shine on this lovely damn thing and see what’s the next...” As you expected, another puzzle comes out...\n"
                     <<"PW: _ _ _ _ _ _\n"
-                    <<"- .... . .-. .  .-- . .-. .  .-- .. ... .  --- .-.. -..  --- .-- .-.. ...  ... .- -  --- -.  .-  -... .- .-. -.  -.. --- --- .-. --··--\n"
-                    <<". .. --. .... -  ..-. .-.. . .--  .- .-- .- -.-- --··--\n"
-                    <<"..-. .. -. -.. .. -. --.  - .... .  . .-.. -.. . .-.  --- .-- .-.. ...  --- -.  - .... . .. .-.  .-- .- -.-- ·-·-·-\n"
-                    <<"--- -. .  --- .-- .-..  .-.. . ..-. -  -... . .... .. -. -.. --··--\n"
-                    <<".- -. -..  --.. . .-. ---  --- .-- .-.. ...  -.-. --- ..- .-.. -.. -.-. .- .-.. --  - .... . .. .-.  -- .. -. -.. ·-·-·-\n"
-                    <<"- .... .-. . .  --- .-- .-.. ...  -.-. .- -- .  -... .- -.-. -.-  - ---  - .... .  -. . ... - --··--\n"
-                    <<"... .- .. -..  - .... .  --- - .... . .-.  ... .. -..-  --- .-- .-.. ...  .-- . .-. .  .-- .- .. - .. -. --.  ..-. --- .-.  -.-- --- ..- .. -.  - .... .  .-- . ... - ·-·-·-\n"
-                    <<"- .... . -.  - .... . ... .  ..-. --- ..- .-.  --- .-- .-.. ...  ... .- .. -..  --. --- --- -.. -... -.-- .  - ---  - .... . .. .-.  --- .-.. -..  .-.. .. ..-. . ·-·-·-\n";
+                    <<"1)- .... . .-. .  .-- . .-. .  .-- .. ... .  --- .-.. -..  --- .-- .-.. ...  ... .- -  --- -.  .-  -... .- .-. -.  -.. --- --- .-. --··--\n"
+                    <<"2). .. --. .... -  ..-. .-.. . .--  .- .-- .- -.-- --··--\n"
+                    <<"3)..-. .. -. -.. .. -. --.  - .... .  . .-.. -.. . .-.  --- .-- .-.. ...  --- -.  - .... . .. .-.  .-- .- -.-- ·-·-·-\n"
+                    <<"4)--- -. .  --- .-- .-..  .-.. . ..-. -  -... . .... .. -. -.. --··--\n"
+                    <<"5).- -. -..  --.. . .-. ---  --- .-- .-.. ...  -.-. --- ..- .-.. -.. -.-. .- .-.. --  - .... . .. .-.  -- .. -. -.. ·-·-·-\n"
+                    <<"6)- .... .-. . .  --- .-- .-.. ...  -.-. .- -- .  -... .- -.-. -.-  - ---  - .... .  -. . ... - --··--\n"
+                    <<"7)... .- .. -..  - .... .  --- - .... . .-.  ... .. -..-  --- .-- .-.. ...  .-- . .-. .  .-- .- .. - .. -. --.  ..-. --- .-.  -.-- --- ..- .. -.  - .... .  .-- . ... - ·-·-·-\n"
+                    <<"8)- .... . -.  - .... . ... .  ..-. --- ..- .-.  --- .-- .-.. ...  ... .- .. -..  --. --- --- -.. -... -.-- .  - ---  - .... . .. .-.  --- .-.. -..  .-.. .. ..-. . ·-·-·-\n";
             }
             else if ((command == "lookat tape") && (find(player.inventory.begin(),player.inventory.end(),"tape")) != end(player.inventory)){
                 cout<<"It seems to be used for sticking something together, maybe some files or documents...\n";
@@ -524,7 +527,7 @@ void StartScene(){
       << "grab <item>\n"
       << "lookat <item>\n"
       << "use <item>\n"
-      << "use <item> <keyword/number>\n"
+      << "use <item> <keyword/number/item>\n"
       << "moveto <room>\n"
       << "{ Remember to grab the object into the inventory before looking at it … }\n"
 
@@ -596,21 +599,17 @@ void Beginning(Player player){
 
 }
 
-void RoomMove(player, puzzle, command){
+void RoomMove(Player player,Puzzle puzzle,string command){
   if(command == "A"){
       player.location = "A";
-      break;
   }
-  if(puzzle.roomblock = true && command == "B"){
+  else if(puzzle.roomblock && command == "B"){
        player.location = "B";
-       break;
   }
-  else if(puzzle.roomclock = true && command == "C"){
+  else if(puzzle.roomclock && command == "C"){
        player.location = "C";
-       break;
   }
-  else if(puzzle.roomdlock = true && command == "D"){
+  else if(puzzle.roomdlock && command == "D"){
        player.location = "D";
-       break;
   }
 }
