@@ -15,7 +15,7 @@ using namespace std;
 
 void StartNewGame(Player& player, Puzzle& puzzle);
 void StartScene();
-void Beginning();
+void Beginning(Player player);
 void Inventory(Player player);
 
 int main(){
@@ -257,7 +257,7 @@ void Inventory(Player player){
   }
 }
 
-void Beginning(Player playera){
+void Beginning(Player player){
   cout << "You find your[self] in a sealed room named [room "<<player.location<<"].\n" ;
   this_thread::sleep_for (chrono::seconds(6));
   cout << "Earthworms and cockroaches are stretching their legs.\n" ;
