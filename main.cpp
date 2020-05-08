@@ -72,6 +72,11 @@ int main(){
                   <<"Listcommands\n";
 
           }
+          else if (command == "moveto") {
+              cout<<"Which room do you want to get in?\n"
+                  <<"Select the room: A, B, C, D.\n"
+              RoomMove(player, puzzle, command)
+          }
           else if (command ==  "lookat self"){
               cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
               this_thread::sleep_for (chrono::seconds(5));
@@ -589,4 +594,23 @@ void Beginning(Player player){
   this_thread::sleep_for (chrono::seconds(6));
   cout << "There is a locked door in front of you with an electric door lock named [lock X] on its surface. (X = A, B, C, D)\n" ;
 
+}
+
+void RoomMove(player, puzzle, command){
+  if(command == "A"){
+      player.location = "A";
+      break;
+  }
+  if(puzzle.roomblock = true && command == "B"){
+       player.location = "B";
+       break;
+  }
+  else if(puzzle.roomclock = true && command == "C"){
+       player.location = "C";
+       break;
+  }
+  else if(puzzle.roomdlock = true && command == "D"){
+       player.location = "D";
+       break;
+  }
 }
