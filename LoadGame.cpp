@@ -98,6 +98,6 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
   puzzle.roombclock = 161059;
   puzzle.roomd = 810364;
   puzzle.roomc = 896424;
-  cout<<"Loaded your game progress!"<<endl;
+  cout<<"Loaded your game progress!\n"<<endl;
   fin.close();
 }
