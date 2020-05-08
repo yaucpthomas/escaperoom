@@ -164,6 +164,9 @@ void StartNewGame(Player& player, Puzzle& puzzle){
   puzzle.roomb = rand() % 900000 + 100000;
   puzzle.roomc = rand() % 9000 + 1000;
   puzzle.roomd = 810364;
+  puzzle.roomblock = false;
+  puzzle.roomclock = false;
+  puzzle.roomdlock = false;
 
   player.firststage = true;
   player.secondstage = false;
@@ -263,6 +266,7 @@ void Beginning(Player playera){
   cout << "Game has started! You may start to type your commands.\n"<<endl;
 
 }
+//
 // getline(cin,command);
 // while(secondstage){
 //          getline(cin, command);
@@ -375,7 +379,7 @@ void Beginning(Player playera){
 //                  player.inventory.push_back("Part D");
 //              }
 //          }
-//          else if (command == "lookat gum" && (find(player.lookat.begin(),player.lookat.end(),"gum")) != end(player.lookat)){
+//          else if (command == "lookat gum" && (find(player.inventory.begin(),player.inventory.end(),"gum")) != end(player.inventory)){
 //              cout<<"“Why there is a gum here? Clues or something else?”\n";
 //          }
 //          else if (command == "use gum" && (find(player.inventory.begin(),player.inventory.end(),"gum")) != end(player.inventory)){
@@ -383,7 +387,7 @@ void Beginning(Player playera){
 //              this_thread::sleep_for (chrono::seconds(5));
 //              cout<<"“Fresh! Seems it has not yet expired.”\n";
 //          }
-//          else if (command == "lookat card reader" && (find(player.lookat.begin(),player.lookat.end(),"card reader")) != end(player.lookat)){
+//          else if (command == "lookat card reader" && (find(player.inventory.begin(),player.inventory.end(),"card reader")) != end(player.inventory)){
 //              cout<<"You see the card reader with a display screen and a bottom slot.\n";
 //              this_thread::sleep_for (chrono::seconds(6));
 //              cout<<"You guess whether something should be inserted in the card reader…\n";
@@ -393,12 +397,12 @@ void Beginning(Player playera){
 //              this_thread::sleep_for (chrono::seconds(7));
 //              cout<<"It looks like it won’t turn on without a suitable card…\n";
 //          }
-//          else if (command == "lookat Part A" && (find(player.lookat.begin(),player.lookat.end(),"Part A")) != end(player.lookat)){
+//          else if (command == "lookat Part A" && (find(player.inventory.begin(),player.inventory.end(),"Part A")) != end(player.inventory)){
 //              cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
 //              this_thread::sleep_for (chrono::seconds(7));
 //              cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
 //          }
-//          else if (command == "lookat clock" && (find(player.lookat.begin(),player.lookat.end(),"clock")) != end(player.lookat)){
+//          else if (command == "lookat clock" && (find(player.inventory.begin(),player.inventory.end(),"clock")) != end(player.inventory)){
 //              cout<<"You look at the clock and find that it seems like an electric clock which should not be the product outcome in this decade.\n";
 //              this_thread::sleep_for (chrono::seconds(8));
 //              cout<<"You also find that behind the clock, there are switches on the left for changing the time on the small front screen, and a secret tap trigger on the right.\n";
@@ -418,7 +422,7 @@ void Beginning(Player playera){
 //              this_thread::sleep_for (chrono::seconds(7));
 //              cout<<"“Hold up, wait a minute. Or it should be something else?”\n";
 //          }
-//          else if (command == "lookat pager" && (find(player.lookat.begin(),player.lookat.end(),"pager")) != end(player.lookat)){
+//          else if (command == "lookat pager" && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory)){
 //              cout<<"You find a pager and you recall the words from the [notes] at the beginning.\n";
 //              this_thread::sleep_for (chrono::seconds(6));
 //              cout<<"The surface is full of dust and tar. You try to clean it with your torn suit and you see a CIA logo at the top left corner on the pager.\n";
@@ -429,22 +433,22 @@ void Beginning(Player playera){
 //              cout<<"You press the CIA logo at the top left corner on the pager and something shows on the little screen.\n";
 //              cout<<"CS : _ _ _ _ _ _\n";
 //          }
-//          else if (command == "lookat Part B" && (find(player.lookat.begin(),player.lookat.end(),"Part B")) != end(player.lookat)){
+//          else if (command == "lookat Part B" && (find(player.inventory.begin(),player.inventory.end(),"Part B")) != end(player.inventory)){
 //              cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
 //              this_thread::sleep_for (chrono::seconds(7));
 //              cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
 //          }
-//          else if (command == "lookat scroll box" && (find(player.lookat.begin(),player.lookat.end(),"scroll box")) != end(player.lookat)){
+//          else if (command == "lookat scroll box" && (find(player.inventory.begin(),player.inventory.end(),"scroll box")) != end(player.inventory)){
 //              cout<<"You find that the scroll box inside has a mysterious [painting] and a document named Uncensored Proofread Context [Part C].\n";
 //              player.lookat.push_back("painting");
 //              player.lookat.push_back("Part C");
 //          }
-//          else if (command == "lookat Part C" && (find(player.lookat.begin(),player.lookat.end(),"Part C")) != end(player.lookat)){
+//          else if (command == "lookat Part C" && (find(player.inventory.begin(),player.inventory.end(),"Part C")) != end(player.inventory)){
 //              cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
 //              this_thread::sleep_for (chrono::seconds(7));
 //              cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
 //          }
-//          else if (command == "lookat poster" && (find(player.lookat.begin(),player.lookat.end(),"poster")) != end(player.lookat)){
+//          else if (command == "lookat poster" && (find(player.inventory.begin(),player.inventory.end(),"poster")) != end(player.inventory)){
 //              cout<<"You pick up and have a close look on the poster.\n";
 //              this_thread::sleep_for (chrono::seconds(5));
 //              cout<<"It looks like a piece of plain paper, but when you try to see through it with the faint light from the nearby light bulb,\n";
@@ -455,12 +459,12 @@ void Beginning(Player playera){
 //               this_thread::sleep_for (chrono::seconds(7));
 //              cout<<"and meanwhile, some ideas crop up from your mind…\n";
 //          }
-//          else if (command == "lookat color paper" && (find(player.lookat.begin(),player.lookat.end(),"color paper")) != end(player.lookat)){
+//          else if (command == "lookat color paper" && (find(player.inventory.begin(),player.inventory.end(),"color paper")) != end(player.inventory)){
 //              cout<<"Though those tiny square holes on the color paper are seemingly weird, you believe this paper has its unique value.\n";
 //              this_thread::sleep_for (chrono::seconds(8));
 //              cout<<"“I’m pretty sure I've seen this piece of sheet before… well actually not that sure. But it should be used for the code extract… ”\n";
 //          }
-//          else if (command == "lookat Part D" && (find(player.lookat.begin(),player.lookat.end(),"Part D")) != end(player.lookat)){
+//          else if (command == "lookat Part D" && (find(player.inventory.begin(),player.inventory.end(),"Part D")) != end(player.inventory)){
 //              cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
 //              this_thread::sleep_for (chrono::seconds(7));
 //              cout<<"“Seems that more documents are required to figure out what actually it is…”\n";

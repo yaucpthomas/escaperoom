@@ -6,7 +6,7 @@
 struct Puzzle{
   std::string rooma, pencode;
   int roombclock, roomd, roombtoc, roomc;
-  bool roomblock;
+  bool roomblock, roomclock, roomdlock;
 };
 
 #endif

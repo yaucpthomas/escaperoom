@@ -69,6 +69,27 @@ void SaveGame(Player player, Puzzle puzzle, string filename){
   else{
     fout<<"secondstage 0"<<endl;
   }
+
+  if (puzzle.roomblock){
+    fout<<"roomblock 1"<<endl;
+  }
+  else{
+    fout<<"roomblock 0"<<endl;
+  }
+
+  if (puzzle.roomclock){
+    fout<<"roomclock 1"<<endl;
+  }
+  else{
+    fout<<"roomclock 0"<<endl;
+  }
+
+  if (puzzle.roomdlock){
+    fout<<"roomdlock 1"<<endl;
+  }
+  else{
+    fout<<"roomdlock 0"<<endl;
+  }
   fout.close();
   cout<<"Saved all your current progress!\n";
 }

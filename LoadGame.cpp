@@ -68,6 +68,33 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
         player.secondstage = false;
       }
     }
+    else if (type == "roomblock"){
+      iss >> data;
+      if (data == "1"){
+        puzzle.roomblock = true;
+      }
+      else {
+        puzzle.roomblock = false;
+      }
+    }
+    else if (type == "roomclock"){
+      iss >> data;
+      if (data == "1"){
+        puzzle.roomclock = true;
+      }
+      else {
+        puzzle.roomclock = false;
+      }
+    }
+    else if (type == "roomdlock"){
+      iss >> data;
+      if (data == "1"){
+        puzzle.roomdlock = true;
+      }
+      else {
+        puzzle.roomdlock = false;
+      }
+    }
   }
   cout<<"Loaded your game progress!"<<endl;
   fin.close();
