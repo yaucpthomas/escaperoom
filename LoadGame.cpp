@@ -32,6 +32,7 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
     }
     else if (type == "inventory"){
         while(iss >> data){
+          replace(data.begin(), data.end(), '_', ' ');
           player.inventory.push_back(data);
         }
     }
@@ -47,6 +48,7 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
     }
     else if (type == "lookat"){
       while(iss >> data){
+        replace(data.begin(), data.end(), '_', ' ');
         player.lookat.push_back(data);
       }
     }
