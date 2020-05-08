@@ -49,6 +49,7 @@ int main(){
   getline(cin, command);
   while(player.firststage){
       getline(cin, command);
+      cout<<endl;
           if (command == "SaveGame"){
               SaveGame(player,puzzle,filename);
           }
@@ -70,7 +71,7 @@ int main(){
           }
 
           else if (command ==  "lookat self"){
-              cout<<"\nYour suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
+              cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
               this_thread::sleep_for (chrono::seconds(5));
               cout<<"You notice that your elbows and knees were scratched and suffering from oozy suppuration.\n" ;
               this_thread::sleep_for (chrono::seconds(5));
