@@ -36,10 +36,10 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
           player.inventory.push_back(data);
         }
     }
-    else if (type == "roombtoc"){
+    else if (type == "roomb"){
         iss >> data;
-        int roombtoc = stoi(data);
-        puzzle.roombtoc = roombtoc;
+        int roomb = stoi(data);
+        puzzle.roomb = roomb;
     }
     else if (type == "roomc"){
         iss >> data;

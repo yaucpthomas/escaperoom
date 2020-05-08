@@ -48,8 +48,9 @@ int main(){
   //First Stage of Game
   getline(cin, command);
   while(player.firststage){
-      getline(cin, command);
-      cout<<endl;
+    getline(cin, command);
+    cout<<"test: "<<command<<endl;
+    cout<<endl;
           if (command == "SaveGame"){
               SaveGame(player,puzzle,filename);
           }
@@ -83,7 +84,8 @@ int main(){
           else if ((command ==  "lookat pocket" ) && (find(player.lookat.begin(),player.lookat.end(),"pocket")) != end(player.lookat)){
             cout<<"You go through your pocket.\n";
             this_thread::sleep_for (chrono::seconds(3));
-            cout<<"You find a few pieces of [notes], a [pen] and your agent [ID card].\n";
+            cout<<"You find a few pieces of [notes], a [pen] and your agent [ID card].\n"
+                <<"[notes], [pen] and [ID card] has been added to your inventory automatically.\n";
             player.lookat.push_back("notes");
             player.lookat.push_back("pen");
             player.lookat.push_back("ID card");
@@ -122,20 +124,20 @@ int main(){
             this_thread::sleep_for (chrono::seconds(6));
             cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
           }
-          else if ((command == "lookat ID card") && (find(player.lookat.begin(),player.lookat.end(),"ID_card")) != end(player.lookat)){
+          else if ((command == "lookat ID card") && (find(player.lookat.begin(),player.lookat.end(),"ID card")) != end(player.lookat)){
             cout<<"You look at the ID card and realize that this card is not yours.\n";
-            this_thread::sleep_for (chrono::seconds(6));
+            this_thread::sleep_for (chrono::seconds(4));
               cout<<"Maybe the card is the informer who gives the notes to you...\n";
           }
 
-          else if ((command == "grab paper clip") && (find(player.lookat.begin(),player.lookat.end(),"paper_clip")) != end(player.lookat)){
+          else if ((command == "grab paper clip") && (find(player.lookat.begin(),player.lookat.end(),"paper clip")) != end(player.lookat)){
               cout<<"You have grabbed the paper clip.\n";
               player.inventory.push_back("paper clip");
           }
-          else if ((command ==  "lookat paper clip") && (find(player.lookat.begin(),player.lookat.end(),"paper_clip")) != end(player.lookat)){
+          else if ((command ==  "lookat paper clip") && (find(player.lookat.begin(),player.lookat.end(),"paper clip")) != end(player.lookat)){
             cout<<"This paper clip seems to be useful for certain purposes…\n";
           }
-          else if ((command == "use paper clip") && (find(player.inventory.begin(),player.inventory.end(),"paper_clip")) != end(player.inventory)){
+          else if ((command == "use paper clip") && (find(player.inventory.begin(),player.inventory.end(),"paper clip")) != end(player.inventory)){
                   cout<<"You try to bend the paper clip and use it to unlock the manacle.\n";
                   this_thread::sleep_for (chrono::seconds(6));
                   cout<<"Fortunately, it does work, and you are free to move around the room.\n";
@@ -148,7 +150,7 @@ int main(){
           else if (command == "inventory"){
             Inventory(player);
           }
-          else{
+          else if (command != " "){
               cout<<"Seems it doesn't work properly. Try again.\n";
           }
   }
@@ -192,12 +194,11 @@ void StartScene(){
   string confirm;
   cout<< "Commands:\n"
       << "grab <item>\n"
-      << "lookat <object>\n"
-      << "use <object>\n"
-      << "use <object> <keyword/number>\n"
+      << "lookat <item>\n"
+      << "use <item>\n"
+      << "use <item> <keyword/number>\n"
       << "moveto <room>\n"
       << "{ Remember to grab the object into the inventory before looking at it … }\n"
-      << "{ Put an underscore between words in command e.g. lookat CD driver ✘ -> lookat CD_driver ✔}\n"
 
       << "Location \n"
       << "Inventory\n"

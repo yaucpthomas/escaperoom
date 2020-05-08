@@ -37,27 +37,27 @@ void SaveGame(Player player, Puzzle puzzle, string filename){
   fout<<"inventory ";
   if (player.inventory.size() > 0){
     for (int i = 0; i < player.inventory.size() - 1; ++i){
-      temp = player.inventory[i]''
+      temp = player.inventory[i];
       replace(temp.begin(), temp.end(), ' ', '_');
       fout<<temp<<" ";
     }
-    temp = player.inventory[player.inventory.size()-1]''
+    temp = player.inventory[player.inventory.size()-1];
     replace(temp.begin(), temp.end(), ' ', '_');
     fout<<temp<<endl;
   }
   else{
     fout<<endl;
   }
-  fout<<"roombtoc "<<puzzle.roombtoc<<endl;
+  fout<<"roomb "<<puzzle.roomb<<endl;
   fout<<"roomc "<<puzzle.roomc<<endl;
   fout<<"lookat ";
   if (player.lookat.size() > 0){
     for (int i = 0; i < player.lookat.size() - 1; ++i){
-      temp = player.lookat[i]''
+      temp = player.lookat[i];
       replace(temp.begin(), temp.end(), ' ', '_');
       fout<<temp<<" ";
     }
-      temp = player.lookat[player.lookat.size()-1]''
+      temp = player.lookat[player.lookat.size()-1];
       replace(temp.begin(), temp.end(), ' ', '_');
       fout<<temp<<endl;
   }
