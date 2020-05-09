@@ -44,7 +44,7 @@ int main(){
   else {
     LoadGame(player,puzzle,filename);
     Inventory(player);
-    cout<<"You have unlocked the following things before you quit:\n";
+    cout<<"\nYou have unlocked the following things before you quit:\n";
     if(puzzle.roomblock){
       cout<<"Room B's door's lock\n";
     }
