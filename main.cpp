@@ -236,6 +236,67 @@ int main(){
                cin>>command;
                RoomMove(player, puzzle,command);
            }
+           else if (command ==  "lookat self"){
+               cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
+               this_thread::sleep_for (chrono::seconds(5));
+               cout<<"You notice that your elbows and knees were scratched and suffering from oozy suppuration.\n" ;
+               this_thread::sleep_for (chrono::seconds(5));
+               cout<<"Your movements and reactions also become dull, or this is why you can no longer feel pain.\n" ;
+               this_thread::sleep_for (chrono::seconds(5));
+               cout<<"However, you can still feel something in your [pocket].\n";
+          }
+          else if ((command ==  "lookat pocket" ) && (find(player.lookat.begin(),player.lookat.end(),"pocket")) != end(player.lookat)){
+               cout<<"You go through your pocket.\n";
+               this_thread::sleep_for (chrono::seconds(3));
+               cout<<"You find a few pieces of [notes], a [pen] and your agent [ID card].\n"
+                   <<"[notes], [pen] and [ID card] has been added to your inventory automatically.\n";
+          }
+          else if((command ==  "lookat notes") && (find(player.lookat.begin(),player.lookat.end(),"notes")) != end(player.lookat)){
+               cout<<"The notes hold together with a [paper clip]\n"
+                   <<"“You may not know who I am but I do know you\n"
+                   <<"well, and I do know what will happen to you next.\n"
+                   <<"Use the puzzles to get password and escape this\n"
+                   <<"place as soon as possible. Take a good look on\n"
+                   <<"yourself and use those items well. The docs and\n"
+                   <<"pager may also help you, so do remember, take\n"
+                   <<"all docs before you leave. Good luck.”\n";
+          }
+          else if ((command == "lookat pen") && (find(player.lookat.begin(),player.lookat.end(),"pen")) != end(player.lookat)){
+               cout<<"“This pen is engraved with the name Penkovsky, what does it mean? ”\n";
+               this_thread::sleep_for (chrono::seconds(6));
+               cout<<"“I think the pen belongs to someone else, I think?”\n";
+               this_thread::sleep_for (chrono::seconds(6));
+               cout<<"And there is a small button on this pen.\n";
+               this_thread::sleep_for (chrono::seconds(4));
+               cout<<"It seems that it has been modified for emergencies…\n";
+          }
+          else if ((command == "use pen") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
+               cout<<"You press the small button on the pen though it seems to be kinds of weird.\n";
+               this_thread::sleep_for (chrono::seconds(7));
+               cout<<"The pen splits after your exertion, and then the inner part pops up.\n";
+               this_thread::sleep_for (chrono::seconds(7));
+               cout<<"“Damn it! A 4-letter electric lock!? Are you sure about that!?”\n";
+               this_thread::sleep_for (chrono::seconds(6));
+               cout<<"“OK… Let me just not think how the electronic lock is made.”\n";
+               this_thread::sleep_for (chrono::seconds(6));
+               cout<<"“Man, what’s the password then? How come I know the password?\n";
+               this_thread::sleep_for (chrono::seconds(6));
+               cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
+          }
+          else if ((command == "use pen oleg") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
+               cout<<"You enter the password and press the button again.“Beep!” a sudden sound intimidates you.\n";
+               this_thread::sleep_for (chrono::seconds(7));
+               cout<<"The two ends pop up somethings interesting: a tiny head of [screwdriver] and a dome-shaped head of [penlight]. It should be useful for escape...\n";
+               player.lookat.push_back("screwdriver");
+               player.lookat.push_back("screwdriver");
+               player.inventory.push_back("penlight");
+               player.inventory.push_back("penlight");
+          }
+          else if ((command == "lookat ID card") && (find(player.lookat.begin(),player.lookat.end(),"ID card")) != end(player.lookat)){
+               cout<<"You look at the ID card and realize that this card is not yours.\n";
+               this_thread::sleep_for (chrono::seconds(4));
+               cout<<"Maybe the card is the informer who gives the notes to you...\n";
+          }
            else if ((command == "lookat room A") &&( player.location == "A")){
                 cout<<"You concentrate your tired mind,\n";
                 this_thread::sleep_for (chrono::seconds(5));
