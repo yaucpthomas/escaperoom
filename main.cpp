@@ -393,8 +393,8 @@ int main(){
                 player.inventory.push_back("scroll box");
             }
             else if ((command == "grab painting") && (find(player.lookat.begin(),player.lookat.end(),"painting")!= end(player.lookat)) && (player.location == "C")){
-                cout<<"You have grabbed the projector.\n";
-                player.inventory.push_back("projector");
+                cout<<"You have grabbed the painting.\n";
+                player.inventory.push_back("painting");
             }
             else if ((command == "grab Part C") && (find(player.lookat.begin(),player.lookat.end(),"Part C")!= end(player.lookat)) && (player.location == "C") ){
                 cout<<"You have grabbed the Part C.\n";
@@ -519,14 +519,14 @@ int main(){
                 cout<<"“Wait what? How come I can type 99:99:99 in this freaking clock? What the hell is going on?”\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Hold up, wait a minute. Or it should be something else?”\n";
-                cout<<"p.s. You should use this command [use pen <password>] at this stage.\n";
+                cout<<"p.s. You should use this command [use clock <password>] at this stage.\n";
             }
             else if ((command == "use clock 161059") && (find(player.inventory.begin(),player.inventory.end(),"clock")) != end(player.inventory)){
-                cout<<"You tap the switch again with this number and something does happen.\n" 
+                cout<<"You tap the switch again with this number and something does happen.\n" ;
                 this_thread::sleep_for (chrono::seconds(4));
-                cout<<"The front screen suddenly shows another number series:"<<puzzle.roomb<<"\n"
+                cout<<"The front screen suddenly shows another number series: "<<puzzle.roomb<<"\n";
                 this_thread::sleep_for (chrono::seconds(4));
-                cout<<"You wonder the meaning of this number series, and you turn your head to the lock...\n"
+                cout<<"You wonder the meaning of this number series, and you turn your head to the lock...\n";
             }
             else if ((command == "lookat pager") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory)){
                 cout<<"You find a pager and you recall the words from the [notes] at the beginning.\n";
@@ -555,7 +555,7 @@ int main(){
             else if ((command == "lookat painting") && (find(player.inventory.begin(),player.inventory.end(),"painting")) != end(player.inventory)){
                 cout<<"You find that the painting style of the painting is a little weird, which makes you think it should not be just painting at all…\n";
             }
-            else if ((command == "use projector") && (find(player.inventory.begin(),player.inventory.end(),"projector") != end(player.inventory))
+            else if (((command == "use projector painting") || (command == "use painting projector")) && (find(player.inventory.begin(),player.inventory.end(),"projector") != end(player.inventory))
                                                 && (find(player.inventory.begin(),player.inventory.end(),"painting") != end(player.inventory))) {
                 cout<<"You realize that you can use the projector to have a clear look at the painting.\n";
                 this_thread::sleep_for (chrono::seconds(4));
@@ -617,7 +617,10 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You stick the docs together and a converted ASCII number series is then shown between the edge of each docs.\n";
                 this_thread::sleep_for (chrono::seconds(4));
-                cout<<"You affirm that the series should be used for the pager… “055 050 049 056 051 049”\n";
+                cout<<"You affirm that the series should be used for the pager… “55 50 49 56 51 49”\n";
+            }
+            else if (command == "use tape"){
+                cout<<"Hmmmm, looks like some part of files are missing.......\n";
             }
             else if ((command == "lookat Part D") && (find(player.inventory.begin(),player.inventory.end(),"Part D")) != end(player.inventory)){
                 cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
