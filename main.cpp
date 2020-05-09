@@ -7,6 +7,7 @@
 #include <thread>
 #include <chrono>
 #include <algorithm>
+#include <cctype>
 #include "player.h"
 #include "puzzle.h"
 #include "LoadGame.h"
@@ -167,10 +168,10 @@ int main(){
             cout<<"You enter the password and press the button again.“Beep!” a sudden sound intimidates you.\n";
             this_thread::sleep_for (chrono::seconds(4));
             cout<<"The two ends pop up somethings interesting: a tiny head of [screwdriver] and a dome-shaped head of [penlight]. It should be useful for escape...\n";
-            player.lookat.push_back("screwdriver");
+            player.lookat.push_back("penlight");
             player.lookat.push_back("screwdriver");
             player.inventory.push_back("penlight");
-            player.inventory.push_back("penlight");
+            player.inventory.push_back("screwdriver");
           }
           else if ((command == "lookat ID card") && (find(player.lookat.begin(),player.lookat.end(),"ID card")) != end(player.lookat)){
             cout<<"You look at the ID card and realize that this card is not yours.\n";
@@ -296,14 +297,16 @@ int main(){
                cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
                cout<<"p.s. You should use this command [use pen <password>] at this stage.\n";
           }
-          else if ((command == "use pen oleg") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
+          else if ((command == "use pen oleg") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)
+                                               && (find(player.inventory.begin(),player.inventory.end(),"penlight")) == end(player.inventory)
+                                               && (find(player.inventory.begin(),player.inventory.end(),"screwdriver")) == end(player.inventory)){
                cout<<"You enter the password and press the button again.“Beep!” a sudden sound intimidates you.\n";
                this_thread::sleep_for (chrono::seconds(4));
                cout<<"The two ends pop up somethings interesting: a tiny head of [screwdriver] and a dome-shaped head of [penlight]. It should be useful for escape...\n";
                cout<<"The screwdriver and penlight have been added to your inventory.\n";
                player.lookat.push_back("screwdriver");
-               player.lookat.push_back("screwdriver");
-               player.inventory.push_back("penlight");
+               player.lookat.push_back("penlight");
+               player.inventory.push_back("screwdriver");
                player.inventory.push_back("penlight");
           }
           else if ((command == "lookat ID card") && (find(player.lookat.begin(),player.lookat.end(),"ID card")) != end(player.lookat)){
@@ -742,29 +745,43 @@ void Beginning(Player player){
   this_thread::sleep_for (chrono::seconds(4));
   cout << "You have to leave this place as soon as possible.\n" ;
 }
+
+bool is_allnumber(const string check)
+{
+  for (int i = 0; i < check.length(); ++i){
+    if (isdigit(check[i]) == false){
+      return false;
+    }
+  }
+  return true;
+}
+
 //Input: Ask them to enter the password
 //Output: puzzle with whether the player unlocked the door or not and what door it opens
 //It checks whether the player entered the correct passcodes to each door or not and update puzzle to allow access if they wish to
 //the enter to that room.
 void LockPassword(Puzzle& puzzle){
   string pw;
-  cout<<"Please enter your password: _ _ _ _ _ _";
+  cout<<"Please enter your password: _ _ _ _ _ _\n";
   cin >> pw ;
   if (pw == puzzle.rooma){
       puzzle.roomblock = true;
       cout<<"You have unlocked the door to room B.\n";
   }
-  else if (stoi(pw) == puzzle.roomb){
-      puzzle.roomclock = true;
-      cout<<"You have unlocked the door to room C.\n";
-  }
-  else if (stoi(pw) == puzzle.roomc){
-      puzzle.roomdlock = true;
-      cout<<"You have unlocked the door to room D.\n";
-  }
-  else if (stoi(pw) == puzzle.roomd){
-      puzzle.pagerlock = true;
-      cout<<"You have unlocked the lock on the pager!\n";
+
+  else if (is_allnumber(pw)){
+    if (stoi(pw) == puzzle.roomb){
+        puzzle.roomclock = true;
+        cout<<"You have unlocked the door to room C.\n";
+    }
+    else if (stoi(pw) == puzzle.roomc){
+        puzzle.roomdlock = true;
+        cout<<"You have unlocked the door to room D.\n";
+    }
+    else if (stoi(pw) == puzzle.roomd){
+        puzzle.pagerlock = true;
+        cout<<"You have unlocked the lock on the pager!\n";
+    }
   }
   else{
       cout<<"Invalid password!\nTry Again!\n";
