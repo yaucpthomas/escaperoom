@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <algorithm>
 #include "SaveGame.h"
 #include "player.h"
 #include "puzzle.h"
