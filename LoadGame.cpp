@@ -93,6 +93,17 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
       }
     }
   }
+    else if (type == "pagerlock"){
+      iss >> data;
+      if (data == "1"){
+        puzzle.pagerlock = true;
+      }
+      else {
+        puzzle.pagerlock = false;
+      }
+    }
+  }
+  
   puzzle.pencode = "oleg";
   puzzle.rooma = "kramer";
   puzzle.roombclock = 161059;
