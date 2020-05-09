@@ -1,0 +1,10 @@
+location A
+inventory notes pen ID_card Part_A gum card_reader Part_B clock pager screwdriver penlight projector scroll_box Part_C painting Part_D tape poster
+roomb 914840
+lookat pocket notes pen ID_card lock card_reader gum Part_A clock pager Part_B clock pager Part_B screwdriver penlight projector scroll_box painting Part_C poster tape Part_D
+firststage 0
+secondstage 1
+roomblock 1
+roomclock 1
+roomdlock 1
+pagerlock 1
