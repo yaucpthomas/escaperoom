@@ -65,7 +65,7 @@ int main(){
                   <<"use <item>\n"
                   <<"use <item> <keyword/number/item>\n"
                   <<"moveto \n"
-                  <<"[REMEMBER TO GRABb the object into the inventory before looking at it …]\n\n"
+                  <<"[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
 
                   <<"Location \n"
                   <<"Inventory\n"
@@ -541,8 +541,8 @@ void StartScene(){
       << "lookat <item>\n"
       << "use <item>\n"
       << "use <item> <keyword/number/item>\n"
-      << "moveto <room>\n"
-      << "{ Remember to grab the object into the inventory before looking at it … }\n"
+      << "moveto\n"
+      << "[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
 
       << "Location \n"
       << "Inventory\n"
