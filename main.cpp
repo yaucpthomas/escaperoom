@@ -539,6 +539,16 @@ int main(){
                 cout<<"You press the CIA logo at the top left corner on the pager and something shows on the little screen.\n";
                 cout<<"CS : _ _ _ _ _ _\n";
             }
+            else if ((command == "use pager 721831") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory) && puzzle.pagerlock){
+                cout<<"You have successfully sent the right countersign to CIA.\n";
+                this_thread::sleep_for (chrono::seconds(4));
+                cout<<"You will soon be contacted to the case officer\n";
+                this_thread::sleep_for (chrono::seconds(4));
+                cout<<"“OMG... Popov! You're still alive. Thank god. I'll surely save you asap...\n";
+                this_thread::sleep_for (chrono::seconds(4));
+                cout<<"Congratulations! You have cleared the game and escape successfully!\n";
+                break;
+            }
             else if ((command == "lookat Part B") && (find(player.inventory.begin(),player.inventory.end(),"Part B")) != end(player.inventory)){
                 cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
                 this_thread::sleep_for (chrono::seconds(4));
