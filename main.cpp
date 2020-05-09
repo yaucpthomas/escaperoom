@@ -18,7 +18,7 @@ void StartScene();
 void Beginning(Player player);
 void Inventory(Player player);
 void RoomMove(Player& player,Puzzle puzzle,string command);
-void LockPassword(Puzzle &puzzle);
+void LockPassword(Puzzle& puzzle);
 
 int main(){
   Player player;
@@ -69,6 +69,12 @@ int main(){
           if (command == "savegame"){
               SaveGame(player,puzzle,filename);
           }
+          else if (command == "quit"){
+            exit(1);
+          }
+          else if (command == "inventory"){
+            Inventory(player);
+          }
           else if (command == "listcommands"){
               cout<<"\nCommands:\n"
                   <<"grab <item>\n"
@@ -76,17 +82,23 @@ int main(){
                   <<"lookat <item>\n"
                   <<"Look at something,duh.\n"
                   <<"use <item>\n"
-                  <<"Type use <item> to either activate and use its special features or \"use lock\" to enter password on the lock.\n"
-                  <<"use <item> <keyword/number/item>\n"
-                  <<""
+                  <<"Type use <item> to either activate and use its special features or \"use lock\" to enter password on the door/pager lock.\n"
+                  <<"use <item> <item>\n"
+                  <<"Use an item with another item "
                   <<"moveto \n"
                   <<"It would prompt to ask you which room you're planning to go and move you to that room if you've unlocked the door.\n"
                   <<"[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
 
                   <<"location \n"
+                  <<"Display which room you are in now.\n"
                   <<"inventory\n"
+                  <<"Display your inventory\n"
                   <<"savegame\n"
-                  <<"listcommands\n";
+                  <<"Save your progress\n"
+                  <<"listcommands\n"
+                  <<"List all commands \n"
+                  <<"quit\n"
+                  <<"Quit the game.(Make sure you saved the game first!)\n";
           }
           else if (command == "location"){
               cout<<"You are now in room "<<player.location<<".\n";
@@ -182,12 +194,6 @@ int main(){
                   player.lookat.erase(pos);
                   cout<<"paper clip has been deleted from your inventory.\n";
           }
-          else if (command == "quit"){
-            exit(1);
-          }
-          else if (command == "inventory"){
-            Inventory(player);
-          }
           else if (command != " "){
               cout<<"Seems it doesn't work properly. Try again.\n";
           }
@@ -213,18 +219,23 @@ int main(){
                    <<"lookat <item>\n"
                    <<"Look at something,duh.\n"
                    <<"use <item>\n"
-                   <<"Type use <item> to either activate and use its special features or \"use lock\" to enter password on the lock.\n"
-                   <<"use <item> <keyword/number/item>\n"
-                   <<""
+                   <<"Type use <item> to either activate and use its special features or \"use lock\" to enter password on the door/pager lock.\n"
+                   <<"use <item> <item>\n"
+                   <<"Use an item with another item "
                    <<"moveto \n"
                    <<"It would prompt to ask you which room you're planning to go and move you to that room if you've unlocked the door.\n"
                    <<"[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
 
                    <<"location \n"
+                   <<"Display which room you are in now.\n"
                    <<"inventory\n"
+                   <<"Display your inventory\n"
                    <<"savegame\n"
+                   <<"Save your progress\n"
                    <<"listcommands\n"
-                   <<"quit\n";
+                   <<"List all commands \n"
+                   <<"quit\n"
+                   <<"Quit the game.(Make sure you saved the game first!)\n";
            }
            else if (command == "location"){
                cout<<"You are now in room "<<player.location<<".\n";
@@ -311,7 +322,7 @@ int main(){
                 cout<<"a file covering a document named Uncensored Proofread Context [Part A] on the floor,\n";
                 this_thread::sleep_for (chrono::seconds(7));
                 cout <<"and a locked door in front of you with an electric door [lock] on its surface.\n";
-                player.lookat.push_back("lock")
+                player.lookat.push_back("lock");
                 player.lookat.push_back("card reader");
                 player.lookat.push_back("gum");
                 player.lookat.push_back("Part A");
@@ -414,12 +425,15 @@ int main(){
             }
             else if ((command == "lookat lock") && (find(player.lookat.begin(),player.lookat.end(),"lock") != end(player.lookat)) && (player.location == "A") ){
                 cout<<"The electronic lock says it is now in OFFLINE MODE. It seems to be connected to this seemingly stainless steel vault door,\n";
-                this_thread::sleep_for (chrono::seconds(7);
+                this_thread::sleep_for (chrono::seconds(7));
                 cout<<"which may require a specific password to unlock. It is also seemingly impossible to damage the door by other methods.\n";
             }
             else if (command == "use lock" && player.location == "A"){
-                    cout<<"OFFLINE MODE\n";
-                    LockPassword(Puzzle &puzzle)
+                cout<<"OFFLINE MODE\n";
+                LockPassword(puzzle);
+            }
+            else if (command == "use lock"){
+                cout<<"You're not in room A to use the lock!\n";
             }
             else if ((command == "lookat gum") && (find(player.inventory.begin(),player.inventory.end(),"gum") != end(player.inventory))){
                 cout<<"“Why there is a gum here? Clues or something else?”\n";
@@ -719,23 +733,23 @@ void Beginning(Player player){
 //Output: puzzle with whether the player unlocked the door or not and what door it opens
 //It checks whether the player entered the correct passcodes to each door or not and update puzzle to allow access if they wish to
 //the enter to that room.
-void LockPassword(Puzzle &puzzle){
-  int pw;
-  cout<<"Please enter your password: _ _ _ _ _ _"
-  cin << pw ;
+void LockPassword(Puzzle& puzzle){
+  string pw;
+  cout<<"Please enter your password: _ _ _ _ _ _";
+  cin >> pw ;
   if (pw == puzzle.rooma){
       puzzle.roomblock = true;
       cout<<"You have unlocked the door to room B.\n";
   }
-  else if (pw == puzzle.roomb){
+  else if (stoi(pw) == puzzle.roomb){
       puzzle.roomclock = true;
       cout<<"You have unlocked the door to room C.\n";
   }
-  else if (pw == puzzle.roomc){
+  else if (stoi(pw) == puzzle.roomc){
       puzzle.roomdlock = true;
       cout<<"You have unlocked the door to room D.\n";
   }
-  else if (pw == puzzle.roomd){
+  else if (stoi(pw) == puzzle.roomd){
       puzzle.pagerlock = true;
       cout<<"You have unlocked the lock on the pager!\n";
   }

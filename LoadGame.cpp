@@ -95,7 +95,6 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
         puzzle.roomdlock = false;
       }
     }
-  }
     else if (type == "pagerlock"){
       iss >> data;
       if (data == "1"){
