@@ -541,11 +541,11 @@ int main(){
                 cout<<"p.s. You should use this command [use pager <password>] at this stage.\n";
             }
             else if ((command == "use pager 721831") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory) && puzzle.pagerlock){
-                cout<<"You have successfully sent the right countersign to CIA.\n";
+                cout<<"“You have successfully sent the right countersign to CIA”.\n";
                 this_thread::sleep_for (chrono::seconds(4));
-                cout<<"You will soon be contacted to the case officer\n";
+                cout<<"“You will soon be contacted to the case officer.”\n";
                 this_thread::sleep_for (chrono::seconds(4));
-                cout<<"“OMG... Popov! You're still alive. Thank god. I'll surely save you asap...\n";
+                cout<<"“OMG... Popov! You're still alive. Thank god. I'll surely save you asap...”\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"Congratulations! You have cleared the game and escape successfully!\n";
                 break;
