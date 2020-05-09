@@ -756,7 +756,8 @@ void Beginning(Player player){
   this_thread::sleep_for (chrono::seconds(4));
   cout << "You have to leave this place as soon as possible.\n" ;
 }
-
+//check whether the string only had number and no other alphabetic
+//return true if
 bool is_allnumber(const string check)
 {
   for (int i = 0; i < check.length(); ++i){
