@@ -56,6 +56,7 @@ int main(){
     if (puzzle.pagerlock){
       cout<<"Pager's lock\n";
     }
+    cout<<endl<<endl;
   }
 
   Beginning(player);
@@ -64,7 +65,6 @@ int main(){
     getline(cin, command);
     while(player.firststage){
     getline(cin, command);
-    cout<<"test: "<<command<<endl;
     cout<<endl;
           if (command == "savegame"){
               SaveGame(player,puzzle,filename);
@@ -194,7 +194,7 @@ int main(){
                   player.lookat.erase(pos);
                   cout<<"paper clip has been deleted from your inventory.\n";
           }
-          else if (command != " "){
+          else if ((command != " ") && (command !="")){
               cout<<"Seems it doesn't work properly. Try again.\n";
           }
   }
@@ -453,11 +453,11 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(7));
                 cout<<"It looks like it won’t turn on without a suitable card…\n";
             }
-            else if (((command == "use ID card card reader") || (command == "use ID card card reader")) && (find(player.inventory.begin(),player.inventory.end(),"ID card")!= end(player.inventory))
+            else if (((command == "use ID card card reader") || (command == "use card reader ID card")) && (find(player.inventory.begin(),player.inventory.end(),"ID card")!= end(player.inventory))
                                               && (find(player.inventory.begin(),player.inventory.end(),"card reader") != end(player.inventory))){
                 cout<<"You realize that you have an ID card in your pocket that the card reader may work if you insert the ID card.\n";
                 this_thread::sleep_for (chrono::seconds(7));
-                cout<<"“If everything goes the right place, it should be a right choice to insert it. Just take a try… Great! Something just pops up. Ehhh, crazy stuff again ?”";
+                cout<<"“If everything goes the right place, it should be a right choice to insert it. Just take a try… Great! Something just pops up. Ehhh, crazy stuff again ?”\n";
                 cout<<"Caesar says: “A->F && {1:18 2:6 2:11 3:2 4:15 5:28}”\n"
                     <<"PW:_ _ _ _ _ _\n\n"
                     <<"Wzns rd qnkj ns ymj mtwwtw,\n"
@@ -610,7 +610,7 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(7));
                 cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
             }
-            else if (command != " "){
+            else if ((command != " ") && (command !="")){
                 cout<<"Seems it doesn't work properly. Try again.\n";
             }
         }
@@ -655,19 +655,29 @@ void StartNewGame(Player& player, Puzzle& puzzle){
 void StartScene(){
   //Inform user of basic commands
   string confirm;
-  cout<< "Commands:\n"
-      << "grab <item>\n"
-      << "lookat <item>\n"
-      << "use <item>\n"
-      << "use <item> <keyword/number/item>\n"
-      << "moveto\n"
-      << "[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
+  cout<<"Commands:\n"
+      <<"grab <item>\n"
+      <<"Grab an item you've discovered before. e.g. grab ring\n"
+      <<"lookat <item>\n"
+      <<"Look at something,duh.\n"
+      <<"use <item>\n"
+      <<"Type use <item> to either activate and use its special features or \"use lock\" to enter password on the door/pager lock.\n"
+      <<"use <item> <item>\n"
+      <<"Use an item with another item "
+      <<"moveto \n"
+      <<"It would prompt to ask you which room you're planning to go and move you to that room if you've unlocked the door.\n"
+      <<"[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
 
-      << "Location \n"
-      << "Inventory\n"
-      << "Savegame\n"
-      << "Loadgame\n"
-      << "Listcommands\n"
+      <<"location \n"
+      <<"Display which room you are in now.\n"
+      <<"inventory\n"
+      <<"Display your inventory\n"
+      <<"savegame\n"
+      <<"Save your progress\n"
+      <<"listcommands\n"
+      <<"List all commands \n"
+      <<"quit\n"
+      <<"Quit the game.(Make sure you saved the game first!)\n"
       << "Type \"next\" to proceed.\n";
   cin >> confirm;
   while (confirm != "next"){

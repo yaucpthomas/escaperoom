@@ -17,13 +17,13 @@ void SaveGame(Player player, Puzzle puzzle, string filename){
   //Open orginial file or new save file if the player's new
   if (filename == ""){
     cout<<"How do you want your save file named? (Must end with .txt and no space are allowed.)\n";
-    cin>>filename;
+    getline(cin,filename);
     fout.open(filename.c_str());
 
     while(fout.fail()){
       cout<<"Error opening file "<<filename<<" !\n"
           <<"Please enter a new file name:\n";
-      cin>>filename;
+      getline(cin,filename);
       fout.open(filename.c_str());
     }
   }
