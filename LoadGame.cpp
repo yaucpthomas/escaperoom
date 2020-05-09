@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <algorithm>
 #include <sstream>
 #include "LoadGame.h"
 #include "player.h"
