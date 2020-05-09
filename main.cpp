@@ -201,7 +201,10 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(7));
                 cout<<"a small pack of chewing [gum]\n";
                 this_thread::sleep_for (chrono::seconds(5));
-                cout<<"and a file covering a document named Uncensored Proofread Context [Part A] on the floor.\n";
+                cout<<"a file covering a document named Uncensored Proofread Context [Part A] on the floor,\n";
+                this_thread::sleep_for (chrono::seconds(7));
+                cout <<"and a locked door in front of you with an electric door [lock] on its surface.\n";
+                player.lookat.push_back("lock")
                 player.lookat.push_back("card reader");
                 player.lookat.push_back("gum");
                 player.lookat.push_back("Part A");
@@ -302,7 +305,15 @@ int main(){
                 cout<<"You have grabbed the Part D.\n";
                 player.inventory.push_back("Part D");
             }
-
+            else if ((command == "lookat lock") && (find(player.lookat.begin(),player.lookat.end(),"lock") != end(player.lookat)) && (player.location == "A") ){
+                cout<<"The electronic lock says it is now in OFFLINE MODE. It seems to be connected to this seemingly stainless steel vault door,\n";
+                this_thread::sleep_for (chrono::seconds(7);
+                cout<<"which may require a specific password to unlock. It is also seemingly impossible to damage the door by other methods.\n";
+            }
+            else if (command == "use lock" && player.location == "A"){
+                    cout<<"OFFLINE MODE\n";
+                    LockPassword(Puzzle &puzzle)
+            }
             else if ((command == "lookat gum") && (find(player.inventory.begin(),player.inventory.end(),"gum") != end(player.inventory))){
                 cout<<"“Why there is a gum here? Clues or something else?”\n";
             }
@@ -595,10 +606,24 @@ void Beginning(Player player){
   this_thread::sleep_for (chrono::seconds(6));
   cout << "Earthworms and cockroaches are stretching their legs.\n" ;
   this_thread::sleep_for (chrono::seconds(6));
-  cout << "There is a locked door in front of you with an electric door lock named [lock X] on its surface. (X = A, B, C, D)\n" ;
-
+  cout << "You have to leave this place as soon as possible.\n" ;
 }
-
+void LockPassword(Puzzle &puzzle){
+  cout<<"Please enter your password: _ _ _ _ _ _"
+  cin << pw ;
+  if (pw == puzzle.rooma){
+      puzzle.roomblock = true
+  }
+  else if (pw == puzzle.roomb){
+      puzzle.roomclock = true
+  }
+  else if (pw == puzzle.roomc){
+      puzzle.roomdlock = true
+  }
+  else if (pw == puzzle.roomd){
+      puzzle.pagerlock = true
+  }
+}
 void RoomMove(Player player,Puzzle puzzle,string command){
   if(command == "A"){
       player.location = "A";
