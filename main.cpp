@@ -35,11 +35,12 @@ int main(){
         <<"Type \"NewPlayer\" for New Player or \"LoadGame\" to Load Game Files\n";
     cin>>command;
   }
-
+  //Start the game as a new player
   if (command == "NewPlayer"){
     StartNewGame(player, puzzle);
     StartScene();
   }
+  //Load the game with saved file
   else {
     LoadGame(player,puzzle,filename);
     Inventory(player);
@@ -60,7 +61,7 @@ int main(){
 
   Beginning(player);
   cout << "\nGame has started! You may start to type your commands.\n"<<endl;
-  //First Stage of Game
+  //First Stage: This is the stage before the player has unlocked the manacle and been free to move 
     getline(cin, command);
     while(player.firststage){
     getline(cin, command);
@@ -198,8 +199,7 @@ int main(){
               cout<<"Seems it doesn't work properly. Try again.\n";
           }
   }
-
-  //Second Stage
+  //Second Stage: This is the stage after the player has unlocked the manacle and been free to move 
   while(player.secondstage){
            getline(cin, command);
            cout<<endl;
@@ -620,7 +620,7 @@ int main(){
   return 0;
 }
 
-
+// It describes the basic data of this escape game.
 void StartNewGame(Player& player, Puzzle& puzzle){
   srand(time(NULL));
   //Initialise Inventory, puzzle
@@ -651,7 +651,7 @@ void StartNewGame(Player& player, Puzzle& puzzle){
 
 }
 
-
+//It displays the background of this escape game and inform player of basic commands
 void StartScene(){
   //Inform user of basic commands
   string confirm;
@@ -709,7 +709,7 @@ void StartScene(){
   cout << "Your feet are also manacled.\n" ;
   this_thread::sleep_for (chrono::seconds(4));
 }
-
+// It stores the items grabbed by player into an array of the inventory.
 void Inventory(Player player){
   cout<<"You have following item in your inventory: \n";
   if (player.inventory.size() != 0){
@@ -721,7 +721,7 @@ void Inventory(Player player){
     cout<<"You have no item in your list now. Use \"grab\" command to grab something!\n";
   }
 }
-
+//It acts as the homepage of this escape game which shows the player current location.
 void Beginning(Player player){
   cout << "You find your[self] in a sealed room named [room "<<player.location<<"].\n" ;
   this_thread::sleep_for (chrono::seconds(6));
