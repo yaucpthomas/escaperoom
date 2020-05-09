@@ -507,7 +507,8 @@ int main(){
                     <<"I2I5J1J2J3J4J5K5\n"
                     <<"M1M2M3M4M5N1N5O1O2O3O4O5\n"
                     <<"Q1Q2Q3Q5R1R3R5S1S3S4S5\n"
-                    <<"U1U2U3U5V1V3V5W1W2W3W4W5\n";
+                    <<"U1U2U3U5V1V3V5W1W2W3W4W5\n"
+                    <<"p.s. You should use this command [use clock <password>] at this stage.\n";;
             }
             else if ((command == "use clock") && (find(player.inventory.begin(),player.inventory.end(),"clock")) != end(player.inventory)){
                 cout<<"You think the clock seems to be used to display the current time only.\n";
