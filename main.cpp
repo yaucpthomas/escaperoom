@@ -43,42 +43,56 @@ int main(){
   else {
     LoadGame(player,puzzle,filename);
     Inventory(player);
+    cout<<"You have unlocked the following things before you quit:\n";
+    if(puzzle.roomblock){
+      cout<<"Room B's door's lock\n";
+    }
+    if(puzzle.roomclock){
+      cout<<"Room C's door's lock\n";
+    }
+    if (puzzle.roomdlock){
+      cout<<"Room D's door's lock\n";
+    }
+    if (puzzle.pagerlock){
+      cout<<"Pager's lock\n";
+    }
   }
 
-  if (player.firststage){
-    Beginning(player);
-  }
-  cout << "Game has started! You may start to type your commands.\n"<<endl;
+  Beginning(player);
+  cout << "\nGame has started! You may start to type your commands.\n"<<endl;
   //First Stage of Game
     getline(cin, command);
     while(player.firststage){
     getline(cin, command);
     cout<<"test: "<<command<<endl;
     cout<<endl;
-          if (command == "SaveGame"){
+          if (command == "savegame"){
               SaveGame(player,puzzle,filename);
           }
-          else if (command == "Listcommands"){
+          else if (command == "listcommands"){
               cout<<"\nCommands:\n"
                   <<"grab <item>\n"
+                  <<"Grab an item you've discovered before. e.g. grab ring\n"
                   <<"lookat <item>\n"
+                  <<"Look at something,duh.\n"
                   <<"use <item>\n"
+                  <<"Type use <item> to either activate and use its special features or \"use lock\" to enter password on the lock.\n"
                   <<"use <item> <keyword/number/item>\n"
+                  <<""
                   <<"moveto \n"
+                  <<"It would prompt to ask you which room you're planning to go and move you to that room if you've unlocked the door.\n"
                   <<"[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
 
-                  <<"Location \n"
-                  <<"Inventory\n"
-                  <<"Savegame\n"
-                  <<"Loadgame\n"
-                  <<"Listcommands\n";
-
+                  <<"location \n"
+                  <<"inventory\n"
+                  <<"savegame\n"
+                  <<"listcommands\n";
           }
-          else if (command == "moveto") {
-              cout<<"Which room do you want to get in?\n"
-                  <<"Type A, B, C, D to move to that room.\n";
-              cin>>command;
-              RoomMove(player, puzzle,command);
+          else if (command == "location"){
+              cout<<"You are now in room "<<player.location<<".\n";
+          }
+          else if (command == "moveto"){
+              cout<<"You can't move to other room because you're manacled, remember?\n";
           }
           else if (command ==  "lookat self"){
               cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
@@ -189,8 +203,38 @@ int main(){
            else if (command == "inventory"){
              Inventory(player);
            }
-           else if (command == "SaveGame"){
-             SaveGame(player,puzzle,filename);
+           else if (command == "savegame"){
+               SaveGame(player,puzzle,filename);
+           }
+           else if (command == "listcommands"){
+               cout<<"\nCommands:\n"
+                   <<"grab <item>\n"
+                   <<"Grab an item you've discovered before. e.g. grab ring\n"
+                   <<"lookat <item>\n"
+                   <<"Look at something,duh.\n"
+                   <<"use <item>\n"
+                   <<"Type use <item> to either activate and use its special features or \"use lock\" to enter password on the lock.\n"
+                   <<"use <item> <keyword/number/item>\n"
+                   <<""
+                   <<"moveto \n"
+                   <<"It would prompt to ask you which room you're planning to go and move you to that room if you've unlocked the door.\n"
+                   <<"[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
+
+                   <<"location \n"
+                   <<"inventory\n"
+                   <<"savegame\n"
+                   <<"listcommands\n"
+                   <<"quit\n";
+           }
+           else if (command == "location"){
+               cout<<"You are now in room "<<player.location<<".\n";
+           }
+
+           else if (command == "moveto") {
+               cout<<"Which room do you want to get in?\n"
+                   <<"Type A, B, C, D to move to that room.\n";
+               cin>>command;
+               RoomMove(player, puzzle,command);
            }
            else if ((command == "lookat room A") &&( player.location == "A")){
                 cout<<"You concentrate your tired mind,\n";
