@@ -17,7 +17,8 @@ void StartNewGame(Player& player, Puzzle& puzzle);
 void StartScene();
 void Beginning(Player player);
 void Inventory(Player player);
-void RoomMove(Player player,Puzzle puzzle,string command);
+void RoomMove(Player& player,Puzzle puzzle,string command);
+void LockPassword(Puzzle &puzzle);
 
 int main(){
   Player player;
@@ -75,8 +76,9 @@ int main(){
           }
           else if (command == "moveto") {
               cout<<"Which room do you want to get in?\n"
-                  <<"Type A, B, C, D to move to that respective\n";
-              RoomMove(player, puzzle, command);
+                  <<"Type A, B, C, D to move to that room.\n";
+              cin>>command;
+              RoomMove(player, puzzle,command);
           }
           else if (command ==  "lookat self"){
               cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
@@ -609,32 +611,48 @@ void Beginning(Player player){
   cout << "You have to leave this place as soon as possible.\n" ;
 }
 void LockPassword(Puzzle &puzzle){
+  int pw;
   cout<<"Please enter your password: _ _ _ _ _ _"
   cin << pw ;
   if (pw == puzzle.rooma){
-      puzzle.roomblock = true
+      puzzle.roomblock = true;
+      cout<<"You have unlocked the door to room B.\n";
   }
   else if (pw == puzzle.roomb){
-      puzzle.roomclock = true
+      puzzle.roomclock = true;
+      cout<<"You have unlocked the door to room C.\n";
   }
   else if (pw == puzzle.roomc){
-      puzzle.roomdlock = true
+      puzzle.roomdlock = true;
+      cout<<"You have unlocked the door to room D.\n";
   }
   else if (pw == puzzle.roomd){
-      puzzle.pagerlock = true
+      puzzle.pagerlock = true;
+      cout<<"You have unlocked the lock on the pager!\n";
+  }
+  else{
+      cout<<"Invalid password!\nTry Again!\n";
   }
 }
-void RoomMove(Player player,Puzzle puzzle,string command){
+void RoomMove(Player& player,Puzzle puzzle,string command){
   if(command == "A"){
       player.location = "A";
+      cout<<"You are now in room A.\n";
   }
-  else if(puzzle.roomblock && command == "B"){
+  else if((puzzle.roomblock) && command == "B"){
        player.location = "B";
+       cout<<"You are now in room B.\n";
   }
   else if(puzzle.roomclock && command == "C"){
        player.location = "C";
+       cout<<"You are now in room C.\n";
   }
   else if(puzzle.roomdlock && command == "D"){
        player.location = "D";
+       cout<<"You are now in room D.\n";
+  }
+  else {
+    cout<<"Failed entering room "<<command<<"!\n"
+        <<"Make sure you have unlocked the room's door first before moving to that room!\n";
   }
 }
