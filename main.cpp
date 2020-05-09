@@ -161,6 +161,7 @@ int main(){
             cout<<"“Man, what’s the password then? How come I know the password?\n";
             this_thread::sleep_for (chrono::seconds(6));
             cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
+            cout<<"p.s. You should use this command [use pen <password>] at this stage.\n";
           }
           else if ((command == "use pen oleg") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
             cout<<"You enter the password and press the button again.“Beep!” a sudden sound intimidates you.\n";
@@ -293,6 +294,7 @@ int main(){
                cout<<"“Man, what’s the password then? How come I know the password?\n";
                this_thread::sleep_for (chrono::seconds(6));
                cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
+               cout<<"p.s. You should use this command [use pen <password>] at this stage.\n";
           }
           else if ((command == "use pen oleg") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
                cout<<"You enter the password and press the button again.“Beep!” a sudden sound intimidates you.\n";
@@ -659,7 +661,7 @@ void StartScene(){
       << "grab <item>\n"
       << "lookat <item>\n"
       << "use <item>\n"
-      << "use <item> <keyword/number/item>\n"
+      << "use <item> <item>\n"
       << "moveto\n"
       << "[REMEMBER TO GRAB the object into the inventory before looking at it …]\n\n"
 
