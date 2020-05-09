@@ -661,6 +661,7 @@ void StartNewGame(Player& player, Puzzle& puzzle){
   puzzle.roomblock = false;
   puzzle.roomclock = false;
   puzzle.roomdlock = false;
+  puzzle.pagerlock = false;
 
   player.firststage = true;
   player.secondstage = false;
