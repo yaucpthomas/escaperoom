@@ -538,6 +538,7 @@ int main(){
             else if ((command == "use pager") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory) && puzzle.pagerlock){
                 cout<<"You press the CIA logo at the top left corner on the pager and something shows on the little screen.\n";
                 cout<<"CS : _ _ _ _ _ _\n";
+                cout<<"p.s. You should use this command [use pager <password>] at this stage.\n";
             }
             else if ((command == "use pager 721831") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory) && puzzle.pagerlock){
                 cout<<"You have successfully sent the right countersign to CIA.\n";
