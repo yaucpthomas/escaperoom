@@ -426,9 +426,9 @@ int main(){
                 player.inventory.push_back("Part D");
             }
             else if ((command == "lookat lock") && (find(player.lookat.begin(),player.lookat.end(),"lock") != end(player.lookat)) && (player.location == "A") ){
-                cout<<"The electronic lock says it is now in OFFLINE MODE. It seems to be connected to this seemingly stainless steel vault door,\n";
+                cout<<"The electronic lock says it is now in OFFLINE MODE. It seems to be connected to another locked door,\n";
                 this_thread::sleep_for (chrono::seconds(7));
-                cout<<"which may require a specific password to unlock. It is also seemingly impossible to damage the door by other methods.\n";
+                cout<<"which may require specific passwords to unlock. It is also seemingly impossible to damage the door by other methods.\n";
             }
             else if (command == "use lock" && player.location == "A"){
                 cout<<"OFFLINE MODE\n";
