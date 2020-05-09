@@ -519,6 +519,14 @@ int main(){
                 cout<<"“Wait what? How come I can type 99:99:99 in this freaking clock? What the hell is going on?”\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Hold up, wait a minute. Or it should be something else?”\n";
+                cout<<"p.s. You should use this command [use pen <password>] at this stage.\n";
+            }
+            else if ((command == "use clock 161059") && (find(player.inventory.begin(),player.inventory.end(),"clock")) != end(player.inventory)){
+                cout<<"You tap the switch again with this number and something does happen.\n" 
+                this_thread::sleep_for (chrono::seconds(4));
+                cout<<"The front screen suddenly shows another number series:"<<puzzle.roomb<<"\n"
+                this_thread::sleep_for (chrono::seconds(4));
+                cout<<"You wonder the meaning of this number series, and you turn your head to the lock...\n"
             }
             else if ((command == "lookat pager") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory)){
                 cout<<"You find a pager and you recall the words from the [notes] at the beginning.\n";
