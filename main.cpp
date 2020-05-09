@@ -654,6 +654,10 @@ void Beginning(Player player){
   this_thread::sleep_for (chrono::seconds(6));
   cout << "You have to leave this place as soon as possible.\n" ;
 }
+//Input: Ask them to enter the password
+//Output: puzzle with whether the player unlocked the door or not and what door it opens
+//It checks whether the player entered the correct passcodes to each door or not and update puzzle to allow access if they wish to
+//the enter to that room.
 void LockPassword(Puzzle &puzzle){
   int pw;
   cout<<"Please enter your password: _ _ _ _ _ _"
@@ -678,6 +682,10 @@ void LockPassword(Puzzle &puzzle){
       cout<<"Invalid password!\nTry Again!\n";
   }
 }
+
+//It moves the player to the room where they want to go
+//Input:which room they're trying to move to, player,puzzles
+//Output:It output the player structure by pass-by reference which changed the player.location depends on whether they have unlocked the door to it or not
 void RoomMove(Player& player,Puzzle puzzle,string command){
   if(command == "A"){
       player.location = "A";

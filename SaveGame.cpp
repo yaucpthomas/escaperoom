@@ -6,7 +6,11 @@
 #include "puzzle.h"
 #include <vector>
 using namespace std;
-
+//It saves the game and output a .txt file to save the game status
+//Input: player,puzzle,filename
+//If the player loaded the game before, it will save the progress to the same file Again
+//If the player is new, it requires them to enter their desired name of the file and save to that respective file
+//You can refer to samplesave.txt to see the sample of the save file
 void SaveGame(Player player, Puzzle puzzle, string filename){
   ofstream fout;
   string temp;

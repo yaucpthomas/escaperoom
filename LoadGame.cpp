@@ -7,7 +7,10 @@
 #include "puzzle.h"
 #include <vector>
 using namespace std;
-
+//It reads the file input and load the game status to main
+//Input: player,puzzle, filename
+//The function pass by player and puzzle data structure to transfer data to the main
+//It also pass by filename to automatically save game with the same file again without typing the name again
 void LoadGame(Player &player, Puzzle &puzzle, string &filename){
   ifstream fin;
   cout<<"What's your file name? (Must end with .txt and have no space)\n";
@@ -103,7 +106,7 @@ void LoadGame(Player &player, Puzzle &puzzle, string &filename){
       }
     }
   }
-  
+  //Initialise those with fixed passcodes
   puzzle.pencode = "oleg";
   puzzle.rooma = "kramer";
   puzzle.roombclock = 161059;
