@@ -446,7 +446,7 @@ int main(){
                 this_thread::sleep_for (chrono::seconds(8));
                 cout<<"“Oh god, finally. I got a way to leave here.”\n";
             }
-            else if ((command == "use pager") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory)){
+            else if ((command == "use pager") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory) && puzzle.pagerlock){
                 cout<<"You press the CIA logo at the top left corner on the pager and something shows on the little screen.\n";
                 cout<<"CS : _ _ _ _ _ _\n";
             }
