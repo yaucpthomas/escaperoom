@@ -109,11 +109,11 @@ int main(){
           }
           else if (command ==  "lookat self"){
               cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
-              this_thread::sleep_for (chrono::seconds(5));
+              this_thread::sleep_for (chrono::seconds(4));
               cout<<"You notice that your elbows and knees were scratched and suffering from oozy suppuration.\n" ;
-              this_thread::sleep_for (chrono::seconds(5));
+              this_thread::sleep_for (chrono::seconds(4));
               cout<<"Your movements and reactions also become dull, or this is why you can no longer feel pain.\n" ;
-              this_thread::sleep_for (chrono::seconds(5));
+              this_thread::sleep_for (chrono::seconds(4));
               cout<<"However, you can still feel something in your [pocket].\n";
               player.lookat.push_back("pocket");
           }
@@ -142,30 +142,30 @@ int main(){
           }
           else if ((command == "lookat pen") && (find(player.lookat.begin(),player.lookat.end(),"pen")) != end(player.lookat)){
             cout<<"“This pen is engraved with the name Penkovsky, what does it mean? ”\n";
-            this_thread::sleep_for (chrono::seconds(6));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"“I think the pen belongs to someone else, I think?”\n";
-            this_thread::sleep_for (chrono::seconds(6));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"And there is a small button on this pen.\n";
             this_thread::sleep_for (chrono::seconds(4));
             cout<<"It seems that it has been modified for emergencies…\n";
           }
           else if ((command == "use pen") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
             cout<<"You press the small button on the pen though it seems to be kinds of weird.\n";
-            this_thread::sleep_for (chrono::seconds(7));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"The pen splits after your exertion, and then the inner part pops up.\n";
-            this_thread::sleep_for (chrono::seconds(7));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"“Damn it! A 4-letter electric lock!? Are you sure about that!?”\n";
-            this_thread::sleep_for (chrono::seconds(6));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"“OK… Let me just not think how the electronic lock is made.”\n";
-            this_thread::sleep_for (chrono::seconds(6));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"“Man, what’s the password then? How come I know the password?\n";
-            this_thread::sleep_for (chrono::seconds(6));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
             cout<<"p.s. You should use this command [use pen <password>] at this stage.\n";
           }
           else if ((command == "use pen oleg") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
             cout<<"You enter the password and press the button again.“Beep!” a sudden sound intimidates you.\n";
-            this_thread::sleep_for (chrono::seconds(7));
+            this_thread::sleep_for (chrono::seconds(4));
             cout<<"The two ends pop up somethings interesting: a tiny head of [screwdriver] and a dome-shaped head of [penlight]. It should be useful for escape...\n";
             player.lookat.push_back("screwdriver");
             player.lookat.push_back("screwdriver");
@@ -186,7 +186,7 @@ int main(){
           }
           else if ((command == "use paper clip") && (find(player.inventory.begin(),player.inventory.end(),"paper clip")) != end(player.inventory)){
                   cout<<"You try to bend the paper clip and use it to unlock the manacle.\n";
-                  this_thread::sleep_for (chrono::seconds(6));
+                  this_thread::sleep_for (chrono::seconds(4));
                   cout<<"Fortunately, it does work, and you are free to move around the room.\n";
                   player.firststage = false;
                   player.secondstage = true;
@@ -250,11 +250,11 @@ int main(){
            }
            else if (command ==  "lookat self"){
                cout<<"Your suit is torn, your long sleeves are shredded, and also your trousers.\n" ;
-               this_thread::sleep_for (chrono::seconds(5));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"You notice that your elbows and knees were scratched and suffering from oozy suppuration.\n" ;
-               this_thread::sleep_for (chrono::seconds(5));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"Your movements and reactions also become dull, or this is why you can no longer feel pain.\n" ;
-               this_thread::sleep_for (chrono::seconds(5));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"However, you can still feel something in your [pocket].\n";
           }
           else if ((command ==  "lookat pocket" ) && (find(player.lookat.begin(),player.lookat.end(),"pocket")) != end(player.lookat)){
@@ -264,7 +264,7 @@ int main(){
                    <<"[notes], [pen] and [ID card] has been added to your inventory automatically.\n";
           }
           else if((command ==  "lookat notes") && (find(player.lookat.begin(),player.lookat.end(),"notes")) != end(player.lookat)){
-               cout<<"The notes hold together with a [paper clip]\n"
+               cout<<"The notes hold together with the paper clip\n"
                    <<"“You may not know who I am but I do know you\n"
                    <<"well, and I do know what will happen to you next.\n"
                    <<"Use the puzzles to get password and escape this\n"
@@ -275,31 +275,32 @@ int main(){
           }
           else if ((command == "lookat pen") && (find(player.lookat.begin(),player.lookat.end(),"pen")) != end(player.lookat)){
                cout<<"“This pen is engraved with the name Penkovsky, what does it mean? ”\n";
-               this_thread::sleep_for (chrono::seconds(6));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"“I think the pen belongs to someone else, I think?”\n";
-               this_thread::sleep_for (chrono::seconds(6));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"And there is a small button on this pen.\n";
                this_thread::sleep_for (chrono::seconds(4));
                cout<<"It seems that it has been modified for emergencies…\n";
           }
           else if ((command == "use pen") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
                cout<<"You press the small button on the pen though it seems to be kinds of weird.\n";
-               this_thread::sleep_for (chrono::seconds(7));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"The pen splits after your exertion, and then the inner part pops up.\n";
-               this_thread::sleep_for (chrono::seconds(7));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"“Damn it! A 4-letter electric lock!? Are you sure about that!?”\n";
-               this_thread::sleep_for (chrono::seconds(6));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"“OK… Let me just not think how the electronic lock is made.”\n";
-               this_thread::sleep_for (chrono::seconds(6));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"“Man, what’s the password then? How come I know the password?\n";
-               this_thread::sleep_for (chrono::seconds(6));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"You look back at the name on the pen, and find that things are just that simple…\n";
                cout<<"p.s. You should use this command [use pen <password>] at this stage.\n";
           }
           else if ((command == "use pen oleg") && (find(player.inventory.begin(),player.inventory.end(),"pen")) != end(player.inventory)){
                cout<<"You enter the password and press the button again.“Beep!” a sudden sound intimidates you.\n";
-               this_thread::sleep_for (chrono::seconds(7));
+               this_thread::sleep_for (chrono::seconds(4));
                cout<<"The two ends pop up somethings interesting: a tiny head of [screwdriver] and a dome-shaped head of [penlight]. It should be useful for escape...\n";
+               cout<<"The screwdriver and penlight have been added to your inventory.\n";
                player.lookat.push_back("screwdriver");
                player.lookat.push_back("screwdriver");
                player.inventory.push_back("penlight");
@@ -312,17 +313,17 @@ int main(){
           }
            else if ((command == "lookat room A") &&( player.location == "A")){
                 cout<<"You concentrate your tired mind,\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"walk around the messy room,\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and take a closer look at the surroundings.\n";
-                this_thread::sleep_for (chrono::seconds(6));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You find that there are a [card reader] beside the computer,\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"a small pack of chewing [gum]\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"a file covering a document named Uncensored Proofread Context [Part A] on the floor,\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout <<"and a locked door in front of you with an electric door [lock] on its surface.\n";
                 player.lookat.push_back("lock");
                 player.lookat.push_back("card reader");
@@ -344,13 +345,13 @@ int main(){
 
             else if ((command == "lookat room B") && (player.location == "B")){
                 cout<<"You concentrate your tired mind,\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"walk around the messy room,\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and take a closer look at the surroundings.\n";
-                this_thread::sleep_for (chrono::seconds(6));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You find that there are a small digital [clock],a [pager]\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and a file covering a document named Uncensored Proofread Context [Part B] on the floor.\n";
                 player.lookat.push_back("clock");
                 player.lookat.push_back("pager");
@@ -371,11 +372,11 @@ int main(){
 
             else if ((command == "lookat room C") && (player.location == "C")){
                 cout<<"You concentrate your tired mind,\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"walk around the messy room,\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and take a closer look at the surroundings.\n";
-                this_thread::sleep_for (chrono::seconds(6));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You find that there is a seemingly broken [projector] and a reel [scroll box]\n";
                 player.lookat.push_back("projector");
                 player.lookat.push_back("scroll box");
@@ -399,15 +400,15 @@ int main(){
 
             else if ((command == "lookat room D") && player.location == "D"){
                 cout<<"You concentrate your tired mind,\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"walk around the messy room,\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and take a closer look at the surroundings.\n";
-                this_thread::sleep_for (chrono::seconds(6));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You find that there are a [poster] pasted on the desk,\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"a [tape] with incomprehensible squared holes on it,\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and a file covering a document named Uncensored Proofread Context [Part D] on the floor.\n";
                 player.lookat.push_back("poster");
                 player.lookat.push_back("tape");
@@ -427,7 +428,7 @@ int main(){
             }
             else if ((command == "lookat lock") && (find(player.lookat.begin(),player.lookat.end(),"lock") != end(player.lookat)) && (player.location == "A") ){
                 cout<<"The electronic lock says it is now in OFFLINE MODE. It seems to be connected to another locked door,\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"which may require specific passwords to unlock. It is also seemingly impossible to damage the door by other methods.\n";
             }
             else if (command == "use lock" && player.location == "A"){
@@ -442,23 +443,23 @@ int main(){
             }
             else if ((command == "use gum") && (find(player.inventory.begin(),player.inventory.end(),"gum") != end(player.inventory))){
                 cout<<"You stop thinking something weird and take the gum.\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Fresh! Seems it has not yet expired.”\n";
             }
             else if ((command == "lookat card reader") && (find(player.inventory.begin(),player.inventory.end(),"card reader") != end(player.inventory))){
                 cout<<"You see the card reader with a display screen and a bottom slot.\n";
-                this_thread::sleep_for (chrono::seconds(6));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You guess whether something should be inserted in the card reader…\n";
             }
             else if ((command == "use card reader") && (find(player.inventory.begin(),player.inventory.end(),"card reader") != end(player.inventory))){
                 cout<<"You try to turn on the card reader in other ways, but eventually those ways seem to be in vain…\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"It looks like it won’t turn on without a suitable card…\n";
             }
             else if (((command == "use ID card card reader") || (command == "use card reader ID card")) && (find(player.inventory.begin(),player.inventory.end(),"ID card")!= end(player.inventory))
                                               && (find(player.inventory.begin(),player.inventory.end(),"card reader") != end(player.inventory))){
                 cout<<"You realize that you have an ID card in your pocket that the card reader may work if you insert the ID card.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“If everything goes the right place, it should be a right choice to insert it. Just take a try… Great! Something just pops up. Ehhh, crazy stuff again ?”\n";
                 cout<<"Caesar says: “A->F && {1:18 2:6 2:11 3:2 4:15 5:28}”\n"
                     <<"PW:_ _ _ _ _ _\n\n"
@@ -472,24 +473,24 @@ int main(){
             }
             else if ((command == "lookat Part A") && (find(player.inventory.begin(),player.inventory.end(),"Part A")) != end(player.inventory)){
                 cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
             }
             else if ((command == "lookat clock") && (find(player.inventory.begin(),player.inventory.end(),"clock")) != end(player.inventory)){
                 cout<<"You look at the clock and find that it seems like an electric clock which should not be the product outcome in this decade.\n";
-                this_thread::sleep_for (chrono::seconds(8));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You also find that behind the clock, there are switches on the left for changing the time on the small front screen, and a secret tap trigger on the right.\n";
-                this_thread::sleep_for (chrono::seconds(9));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You try to open it by hand but it does not seem to work. \n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Maybe using some tools can do this stuff...”\n";
             }
             else if (((command == "use screwdriver clock") || (command == "use clock screwdriver")) && (find(player.inventory.begin(),player.inventory.end(),"screwdriver") != end(player.inventory))
                                                   && (find(player.inventory.begin(),player.inventory.end(),"clock") != end(player.inventory))){
                 cout<<"You realize that you can use the head of the screwdriver in your pen to open the trigger, and it does work.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"But then, a small piece of chip pops up and you are intimidated again.\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"There are words on the small chips on both sides.\n";
                 this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You try to focus on those words, although they are pretty small. “Oh come on, man. Crazy stuff again ?”\n";
@@ -507,20 +508,20 @@ int main(){
             }
             else if ((command == "use clock") && (find(player.inventory.begin(),player.inventory.end(),"clock")) != end(player.inventory)){
                 cout<<"You think the clock seems to be used to display the current time only.\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"But later when you think more deeply, you realize that this clock may not just show the current time,\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and then you try to tap the switches to see if anything would happen.\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Wait what? How come I can type 99:99:99 in this freaking clock? What the hell is going on?”\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Hold up, wait a minute. Or it should be something else?”\n";
             }
             else if ((command == "lookat pager") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory)){
                 cout<<"You find a pager and you recall the words from the [notes] at the beginning.\n";
-                this_thread::sleep_for (chrono::seconds(6));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"The surface is full of dust and tar. You try to clean it with your torn suit and you see a CIA logo at the top left corner on the pager.\n";
-                this_thread::sleep_for (chrono::seconds(8));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Oh god, finally. I got a way to leave here.”\n";
             }
             else if ((command == "use pager") && (find(player.inventory.begin(),player.inventory.end(),"pager")) != end(player.inventory) && puzzle.pagerlock){
@@ -529,7 +530,7 @@ int main(){
             }
             else if ((command == "lookat Part B") && (find(player.inventory.begin(),player.inventory.end(),"Part B")) != end(player.inventory)){
                 cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
             }
             else if ((command == "lookat projector") && (find(player.inventory.begin(),player.inventory.end(),"projector")) != end(player.inventory)){
@@ -546,7 +547,7 @@ int main(){
             else if ((command == "use projector") && (find(player.inventory.begin(),player.inventory.end(),"projector") != end(player.inventory))
                                                 && (find(player.inventory.begin(),player.inventory.end(),"painting") != end(player.inventory))) {
                 cout<<"You realize that you can use the projector to have a clear look at the painting.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"As you expect, something shows from the underneath…\n";
                 cout<<"Orange(O)->Apple(A)->Banana(B)->Melon(M)\n"
                     <<"OOBAM->2\n"
@@ -564,24 +565,24 @@ int main(){
             }
             else if ((command == "lookat Part C") && (find(player.inventory.begin(),player.inventory.end(),"Part C")) != end(player.inventory)){
                 cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
             }
             else if ((command == "lookat poster") && (find(player.inventory.begin(),player.inventory.end(),"poster")) != end(player.inventory)){
                 cout<<"You pick up and have a close look on the poster.\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"It looks like a piece of plain paper, but when you try to see through it with the faint light from the nearby light bulb,\n";
-                this_thread::sleep_for (chrono::seconds(8));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"you vaguely see some dots and line hidden.\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You want to know what that is, and you look for a stronger light source,\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"and meanwhile, some ideas crop up from your mind…\n";
             }
             else if (((command == "use penlight poster")|| (command == "use poster penlight"))&& (find(player.inventory.begin(),player.inventory.end(),"penlight")) != end(player.inventory)
                                                && (find(player.inventory.begin(),player.inventory.end(),"poster")) != end(player.inventory)){
                 cout<<"You go through your pocket to find something useful, and you remember you’ve got a penlight from your pen.\n";
-                this_thread::sleep_for (chrono::seconds(5));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“OMG. I’m smart af boi. OK, let just shine on this lovely damn thing and see what’s the next...” As you expected, another puzzle comes out...\n"
                     <<"PW: _ _ _ _ _ _\n"
                     <<"1)- .... . .-. .  .-- . .-. .  .-- .. ... .  --- .-.. -..  --- .-- .-.. ...  ... .- -  --- -.  .-  -... .- .-. -.  -.. --- --- .-. --··--\n"
@@ -602,14 +603,14 @@ int main(){
                                            && (find(player.inventory.begin(),player.inventory.end(),"Part D")) != end(player.inventory)
                                            && (find(player.inventory.begin(),player.inventory.end(),"Part D")) != end(player.inventory)){
                 cout<<"You finish collecting all the docs and remember that the note at the beginning mentioned that the docs would be useful for your escape.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You stick the docs together and a converted ASCII number series is then shown between the edge of each docs.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"You affirm that the series should be used for the pager… “055 050 049 056 051 049”\n";
             }
             else if ((command == "lookat Part D") && (find(player.inventory.begin(),player.inventory.end(),"Part D")) != end(player.inventory)){
                 cout<<"You look at the document and find that it is just like a section of a whole uncensored context.\n";
-                this_thread::sleep_for (chrono::seconds(7));
+                this_thread::sleep_for (chrono::seconds(4));
                 cout<<"“Seems that more documents are required to figure out what actually it is…”\n";
             }
             else if ((command != " ") && (command !="")){
@@ -694,15 +695,15 @@ void StartScene(){
   cout<<"Oleg. Oleg Penkovsky. Джордж Кисевальтер (countersign)\n";
   this_thread::sleep_for (chrono::seconds(3));
   cout<<"Come in first, my pal. (Door opens) Things go right and we're gonna leave as soon...\n";
-  this_thread::sleep_for (chrono::seconds(5));
+  this_thread::sleep_for (chrono::seconds(4));
   cout<<"Popov, you bastard. Caught him right now!\n";
   this_thread::sleep_for (chrono::seconds(4));
   cout<<"Wait, what? Not Oleg?? (How come KGB knows the sign...)\n";
   this_thread::sleep_for (chrono::seconds(4));
   cout<<"Man, you’re so damn bold, huh? How dare you betray your own country?\n";
-  this_thread::sleep_for (chrono::seconds(5));
+  this_thread::sleep_for (chrono::seconds(4));
   cout<<"(Pager rings) Sir, we got em. We’ll return now. (Hang up the call)\n";
-  this_thread::sleep_for (chrono::seconds(5));
+  this_thread::sleep_for (chrono::seconds(4));
   cout<<"Bring him to the car and give him the taste of pain.\n";
   this_thread::sleep_for (chrono::seconds(4));
 
@@ -717,7 +718,7 @@ void StartScene(){
   cout << "\nYou wake up on the cold floor.\n" ;
   this_thread::sleep_for (chrono::seconds(4));
   cout << "You sit up and realize that your body is seriously bruised.\n" ;
-  this_thread::sleep_for (chrono::seconds(7));
+  this_thread::sleep_for (chrono::seconds(4));
   cout << "Your feet are also manacled.\n" ;
   this_thread::sleep_for (chrono::seconds(4));
 }
@@ -736,9 +737,9 @@ void Inventory(Player player){
 //It acts as the homepage of this escape game which shows the player current location.
 void Beginning(Player player){
   cout << "You find your[self] in a sealed room named [room "<<player.location<<"].\n" ;
-  this_thread::sleep_for (chrono::seconds(6));
+  this_thread::sleep_for (chrono::seconds(4));
   cout << "Earthworms and cockroaches are stretching their legs.\n" ;
-  this_thread::sleep_for (chrono::seconds(6));
+  this_thread::sleep_for (chrono::seconds(4));
   cout << "You have to leave this place as soon as possible.\n" ;
 }
 //Input: Ask them to enter the password
